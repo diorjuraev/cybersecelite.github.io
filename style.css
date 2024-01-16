@@ -1,0 +1,116 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: lightgrey;
+    font-family: 'Courier New', monospace;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    background: transparent;
+
+}
+.container {
+    width: 100%;
+    position: relative; /* Ensures the container is positioned correctly relative to the background */
+    z-index: 1; /* Higher than the background layer */
+}
+
+.profile-picture {
+    display: block; /* Makes it a block element */
+    margin: 0 auto; /* Centers the image horizontally */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area */
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Ensure this is equal to the width for a perfect circle */
+}
+
+.matrix-background {
+
+    Position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(matrix-background.gif) no-repeat center center;
+    background-size: cover;
+    z-index: -1; /* Ensures the background is behind everything else */
+
+}
+
+.content {
+    padding: 20px;
+
+}
+
+.header h1 {
+    font-size: 2em;
+}
+
+.nav a {
+    color: #00ff00;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    margin-top: 20px;
+}
+.section {
+    display: none;
+    /* Other styling for sections */
+}
+.footer {
+    color: lightgrey;
+    width: 100%;
+    text-align:center;
+    position: absolute;
+    bottom: 0;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+   display: flex;
+}
+
+.container {
+    padding: 20px;
+}
+
+.about-me {
+    margin-bottom: 20px;
+}
+
+.social-media a {
+    color: #00ff00;
+    font-size: 30px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ffffff;
+}
+
+.footer {
+    color: lightgrey;
+    text-align: center; /* Center the text inside the footer */
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    left: 0; /* Aligns the footer container to the left edge */
+}
+.about-me {
+    margin: 0 auto; /* Center the div */
+    max-width: 600px; /* Set a maximum width for the content */
+    padding: 20px;
+    text-align: center; /* Center the text inside the div */
+    color: lightgrey;
+}
