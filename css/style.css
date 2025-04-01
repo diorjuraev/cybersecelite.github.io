@@ -121,7 +121,7 @@ header.main-header {
 }
 
 .logo-container img {
-    height: 80px; /* Adjust based on your logo aspect ratio */
+    height: 60px; /* Adjust based on your logo aspect ratio */
     width: auto;
     display: block; /* Remove extra space below image */
     border-radius: 50%;
