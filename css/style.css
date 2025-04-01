@@ -121,9 +121,11 @@ header.main-header {
 }
 
 .logo-container img {
-    height: 40px; /* Adjust based on your logo aspect ratio */
+    height: 80px; /* Adjust based on your logo aspect ratio */
     width: auto;
     display: block; /* Remove extra space below image */
+    border-radius: 50%;
+    object-fit: cover; /* Makes it look clean inside the circle */
 }
 
 nav.main-nav ul {
