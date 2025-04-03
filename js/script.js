@@ -28,14 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
-document.addEventListener('DOMContentLoaded', () => {
-
-    // --- Intersection Observer setup (Keep your existing code here) ---
-    const sections = document.querySelectorAll('.page-section');
-    // ... (rest of your observer code) ...
-    sections.forEach(section => {
-        observer.observe(section);
-    });
 
     // --- Function to Load Medium Blog Posts ---
     function loadBlogPosts() {
@@ -45,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Only run this code if the blog container exists on the page
         if (!container) {
-            // console.log("Blog container not found, skipping Medium fetch.");
             return;
         }
 
@@ -56,8 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const mediumRssFeed = `https://medium.com/feed/@${mediumUsername}`;
         const rss2jsonApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(mediumRssFeed)}`;
 
-        // console.log("Fetching Medium posts from:", rss2jsonApiUrl); // For debugging
-
         fetch(rss2jsonApiUrl)
             .then(response => {
                 if (!response.ok) {
@@ -66,8 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
-                // console.log("Received data:", data); // For debugging
-
                 if (loadingIndicator) loadingIndicator.style.display = 'none';
 
                 if (data.status === 'ok') {
@@ -97,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             dateElement.textContent = `Published: ${post.pubDate}`; // Fallback
                         }
 
-
                         // Description/Snippet - Use textContent for security (prevents XSS from feed HTML)
                         const descriptionElement = document.createElement('p');
                         // Create a temporary div to parse potential HTML in description and extract text
@@ -108,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         snippet = snippet.length > 250 ? snippet.substring(0, 250) + '...' : snippet;
                         descriptionElement.textContent = snippet;
 
-
                         // Link to read on Medium
                         const readMoreLink = document.createElement('a');
                         readMoreLink.href = post.link;
@@ -116,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         readMoreLink.rel = 'noopener noreferrer';
                         readMoreLink.textContent = 'Read on Medium [↗]';
                         readMoreLink.classList.add('project-link'); // Reuse project link style
-
 
                         // Append elements to the post container
                         postElement.appendChild(titleElement);
@@ -143,7 +127,3 @@ document.addEventListener('DOMContentLoaded', () => {
     loadBlogPosts();
 
 }); // End of DOMContentLoaded listener
-    // --- Add any other simple JS enhancements here ---
-    // e.g., Smooth scroll for any #hash links if needed (though CSS scroll-behavior often handles this)
-
-});
