@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - [Your Name]</title> <link rel="stylesheet" href="css/style.css">
-    </head>
+    <title>About Me - [Your Name]</title> 
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta http-equiv="Content-Security-Policy"
+          content="
+            default-src 'self';
+            script-src 'self';
+            style-src 'self' https://fonts.googleapis.com;
+            img-src 'self' data: https://cdn-images-1.medium.com;
+            font-src 'self' https://fonts.gstatic.com;
+            connect-src 'self' https://api.rss2json.com;
+            form-action 'self';
+            frame-ancestors 'none';
+            base-uri 'self';
+            object-src 'none';
+          ">
+
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <meta http-equiv="Permissions-Policy"
+          content="accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()">
+
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
+          rel="stylesheet"
+          integrity="sha384-HASH_PROVIDED_BY_GOOGLE_FONTS_HERE" crossorigin="anonymous">
+</head>
 <body>
 
     <header class="main-header">
@@ -129,27 +156,3 @@
 
 </body>
 </html>
-
-<meta http-equiv="Content-Security-Policy"
-          content="default-src 'self';
-                   script-src 'self';
-                   style-src 'self' https://fonts.googleapis.com;
-                   img-src 'self' data: https://cdn-images-1.medium.com; /* Allow Medium CDN images */
-                   font-src 'self' https://fonts.gstatic.com;
-                   connect-src 'self' https://api.rss2json.com; /* Allow connection to rss2json */
-                   form-action 'self';
-                   frame-ancestors 'none';
-                   base-uri 'self';
-                   object-src 'none';">
-
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-
-    <meta http-equiv="Permissions-Policy"
-          content="accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()">
-
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
-          rel="stylesheet"
-          integrity="sha384-HASH_PROVIDED_BY_GOOGLE_FONTS_HERE" crossorigin="anonymous">

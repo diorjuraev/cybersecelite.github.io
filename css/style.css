@@ -417,3 +417,21 @@ footer.main-footer {
      h1 { font-size: 2rem; }
     .home-hero h1 { font-size: 2.4rem; }
 }
+
+#blog-loading {
+    text-align: center;
+    padding: 40px;
+    font-style: italic;
+}
+
+#blog-error {
+    text-align: center;
+    padding: 40px;
+    color: #ff6b6b;
+    display: none;
+}
+
+.centered-margin {
+    text-align: center;
+    margin-top: 30px;
+}
