@@ -137,9 +137,9 @@
           content="default-src 'self';
                    script-src 'self';
                    style-src 'self' https://fonts.googleapis.com;
-                   img-src 'self' data:;
+                   img-src 'self' data: https://cdn-images-1.medium.com; /* Allow Medium CDN images */
                    font-src 'self' https://fonts.gstatic.com;
-                   connect-src 'none';
+                   connect-src 'self' https://api.rss2json.com; /* Allow connection to rss2json */
                    form-action 'self';
                    frame-ancestors 'none';
                    base-uri 'self';
