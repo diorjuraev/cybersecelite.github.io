@@ -35,15 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadingIndicator = document.getElementById('blog-loading');
         const errorIndicator = document.getElementById('blog-error');
 
-        // Only run this code if the blog container exists on the page
-        if (!container) {
-            return;
-        }
+        if (!container) return;
 
-        // ★★★ YOUR MEDIUM USERNAME HERE ★★★
-        const mediumUsername = 'diorjuraev'; // Replace with your actual Medium @username
-
-        // Construct the RSS feed URL and the rss2json API URL
+        const mediumUsername = 'diorjuraev';
         const mediumRssFeed = `https://medium.com/feed/@${mediumUsername}`;
         const rss2jsonApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(mediumRssFeed)}`;
 
@@ -55,69 +49,62 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
+                console.log("Medium feed raw data:", data);
+
                 if (loadingIndicator) loadingIndicator.style.display = 'none';
 
-                if (data.status === 'ok') {
-                    container.innerHTML = ''; // Clear previous content if any
-                    const posts = data.items;
-
-                    posts.forEach(post => {
-                        // Create elements for each post
-                        const postElement = document.createElement('div');
-                        postElement.classList.add('list-item'); // Use existing list-item style
-
-                        const titleElement = document.createElement('h3');
-                        const titleLink = document.createElement('a');
-                        titleLink.href = post.link;
-                        titleLink.textContent = post.title;
-                        titleLink.target = '_blank'; // Open Medium post in new tab
-                        titleLink.rel = 'noopener noreferrer';
-                        titleElement.appendChild(titleLink);
-
-                        const dateElement = document.createElement('p');
-                        dateElement.classList.add('date'); // Use existing date style
-                        // Format date nicely
-                        try {
-                            const pubDate = new Date(post.pubDate);
-                            dateElement.textContent = `Published: ${pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
-                        } catch (e) {
-                            dateElement.textContent = `Published: ${post.pubDate}`; // Fallback
-                        }
-
-                        // Description/Snippet - Use textContent for security (prevents XSS from feed HTML)
-                        const descriptionElement = document.createElement('p');
-                        // Create a temporary div to parse potential HTML in description and extract text
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = post.description || ''; // Use description if available
-                        // Extract text, limit length for snippet
-                        let snippet = tempDiv.textContent || tempDiv.innerText || '';
-                        snippet = snippet.length > 250 ? snippet.substring(0, 250) + '...' : snippet;
-                        descriptionElement.textContent = snippet;
-
-                        // Link to read on Medium
-                        const readMoreLink = document.createElement('a');
-                        readMoreLink.href = post.link;
-                        readMoreLink.target = '_blank';
-                        readMoreLink.rel = 'noopener noreferrer';
-                        readMoreLink.textContent = 'Read on Medium [↗]';
-                        readMoreLink.classList.add('project-link'); // Reuse project link style
-
-                        // Append elements to the post container
-                        postElement.appendChild(titleElement);
-                        postElement.appendChild(dateElement);
-                        postElement.appendChild(descriptionElement);
-                        postElement.appendChild(readMoreLink);
-
-                        container.appendChild(postElement);
-                    });
-
-                } else {
-                    console.error('Error fetching Medium posts:', data.message);
-                    if (errorIndicator) errorIndicator.style.display = 'block';
+                if (data.status !== 'ok' || !Array.isArray(data.items) || data.items.length === 0) {
+                    throw new Error("No valid blog posts found.");
                 }
+
+                container.innerHTML = '';
+                const posts = data.items.slice(0, 4); // show up to 4 posts
+
+                posts.forEach(post => {
+                    const postElement = document.createElement('div');
+                    postElement.classList.add('list-item');
+
+                    const titleElement = document.createElement('h3');
+                    const titleLink = document.createElement('a');
+                    titleLink.href = post.link;
+                    titleLink.textContent = post.title;
+                    titleLink.target = '_blank';
+                    titleLink.rel = 'noopener noreferrer';
+                    titleElement.appendChild(titleLink);
+
+                    const dateElement = document.createElement('p');
+                    dateElement.classList.add('date');
+                    try {
+                        const pubDate = new Date(post.pubDate);
+                        dateElement.textContent = `Published: ${pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
+                    } catch (e) {
+                        dateElement.textContent = `Published: ${post.pubDate}`;
+                    }
+
+                    const descriptionElement = document.createElement('p');
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = post.description || '';
+                    let snippet = tempDiv.textContent || tempDiv.innerText || '';
+                    snippet = snippet.length > 250 ? snippet.substring(0, 250) + '...' : snippet;
+                    descriptionElement.textContent = snippet;
+
+                    const readMoreLink = document.createElement('a');
+                    readMoreLink.href = post.link;
+                    readMoreLink.target = '_blank';
+                    readMoreLink.rel = 'noopener noreferrer';
+                    readMoreLink.textContent = 'Read on Medium [↗]';
+                    readMoreLink.classList.add('project-link');
+
+                    postElement.appendChild(titleElement);
+                    postElement.appendChild(dateElement);
+                    postElement.appendChild(descriptionElement);
+                    postElement.appendChild(readMoreLink);
+
+                    container.appendChild(postElement);
+                });
             })
             .catch(error => {
-                console.error('Error fetching or processing Medium posts:', error);
+                console.error('Error loading Medium posts:', error);
                 if (loadingIndicator) loadingIndicator.style.display = 'none';
                 if (errorIndicator) errorIndicator.style.display = 'block';
             });
