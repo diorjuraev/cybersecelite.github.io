@@ -15,7 +15,6 @@
             font-src 'self' https://fonts.gstatic.com;
             connect-src 'self' https://api.rss2json.com;
             form-action 'self';
-            frame-ancestors 'none';
             base-uri 'self';
             object-src 'none';
           ">
@@ -25,10 +24,9 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
-          rel="stylesheet"
-          integrity="sha384-HASH_PROVIDED_BY_GOOGLE_FONTS_HERE" crossorigin="anonymous">
+          rel="stylesheet">
 </head>
 <body>
 
@@ -50,18 +48,18 @@
             <h1>// Blog Posts</h1>
             <p>Articles and thoughts shared on Medium. Pulled directly from the RSS feed.</p>
 
-            <div id="blog-loading" style="text-align: center; padding: 40px; font-style: italic;">
+            <div id="blog-loading" class="blog-loading">
                 Loading posts from Medium...
             </div>
 
             <div id="blog-posts-container" class="item-list">
                 </div>
 
-            <div id="blog-error" style="text-align: center; padding: 40px; color: #ff6b6b; display: none;">
+            <div id="blog-error" class="blog-error">
                 Could not load blog posts at this time. Please try again later or visit Medium directly.
             </div>
 
-            <p style="text-align: center; margin-top: 30px;">
+            <p class="centered-margin">
                  <a href="https://medium.com/@diorjuraev" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View All on Medium</a>
             </p>
         </section>

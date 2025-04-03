@@ -418,13 +418,13 @@ footer.main-footer {
     .home-hero h1 { font-size: 2.4rem; }
 }
 
-#blog-loading {
+.blog-loading {
     text-align: center;
     padding: 40px;
     font-style: italic;
 }
 
-#blog-error {
+.blog-error {
     text-align: center;
     padding: 40px;
     color: #ff6b6b;
@@ -434,4 +434,8 @@ footer.main-footer {
 .centered-margin {
     text-align: center;
     margin-top: 30px;
+}
+
+.hero-margin {
+    margin-top: 3rem;
 }
