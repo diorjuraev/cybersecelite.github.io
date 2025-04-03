@@ -53,7 +53,10 @@
                 Loading posts from Medium...
             </div>
 
-            <div id="blog-posts-container" class="item-list"></div>
+            <div id="blog-posts-container" class="item-list">
+                <!-- Note: Medium tracking pixels (e.g., from medium.com/_/stat) are blocked by browsers due to third-party cookie policies.
+                     We filter them out in script.js before rendering to avoid SameSite cookie warnings and CORB issues. -->
+            </div>
 
             <div id="blog-error" class="blog-error" style="display: none;">
                 Could not load blog posts at this time. Please try again later or visit Medium directly.
