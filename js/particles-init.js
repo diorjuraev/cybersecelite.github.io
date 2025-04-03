@@ -1,4 +1,5 @@
-tsParticles.load("tsparticles", {
+document.addEventListener("DOMContentLoaded", () => {
+  tsParticles.load("tsparticles", {
     background: {
       color: "#0a0a0a"
     },
@@ -45,3 +46,4 @@ tsParticles.load("tsparticles", {
     },
     detectRetina: true
   });
+});
