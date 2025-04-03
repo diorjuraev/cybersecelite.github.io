@@ -151,31 +151,7 @@
           content="accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()">
 
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    ```
 
-**Explanation of Added Meta Tags:**
-
-* **`Content-Security-Policy` (CSP):** This is the most significant addition. It tells the browser the *only* allowed sources for different types of content (scripts, styles, images, fonts, etc.). This drastically reduces the risk of Cross-Site Scripting (XSS) attacks because malicious inline scripts or scripts loaded from untrusted domains will be blocked.
-    * The provided policy is quite strict:
-        * `default-src 'self'`: Default rule - only allow loading from your own website origin.
-        * `script-src 'self'`: Only allow JavaScript files from your own origin (like `js/script.js`). **Important:** This policy *blocks inline JavaScript*. Ensure all your JS is in the `.js` file.
-        * `style-src 'self' https://fonts.googleapis.com`: Allow CSS from your origin (`css/style.css`) and Google Fonts stylesheets. Remove `https://fonts.googleapis.com` if you don't use Google Fonts. **Important:** This policy *blocks inline styles* (`style="..."`). Avoid using inline styles; put all styles in `style.css`.
-        * `img-src 'self' data:`: Allow images from your origin (`assets/`) and `data:` URIs.
-        * `font-src 'self' https://fonts.gstatic.com`: Allow fonts from your origin and Google Fonts. Remove `https://fonts.gstatic.com` if you don't use Google Fonts.
-        * `connect-src 'none'`: Disallow network connections via Fetch or XHR (adjust if you add a contact form that submits data to an API).
-        * `frame-ancestors 'none'`: Prevent your site from being embedded in an `<iframe>` on other sites (protects against clickjacking).
-        * `object-src 'none'`: Disallow plugins like `<object>`, `<embed>` (e.g., Flash).
-* **`Referrer-Policy`:** Enhances privacy by controlling how much referring URL information is sent when users click links to navigate away from your site. `strict-origin-when-cross-origin` is a good balance.
-* **`Permissions-Policy`:** Explicitly disables browser features your website doesn't need (like camera, microphone access, geolocation), reducing the potential attack surface if your site were ever compromised.
-* **`X-Content-Type-Options: nosniff`:** Prevents the browser from trying to guess the content type of a resource, forcing it to rely on the `Content-Type` header. This helps mitigate certain types of attacks.
-
-**2. Subresource Integrity (SRI) - If Using External Resources**
-
-If you decide to uncomment and use external resources like Google Fonts, you should add the `integrity` attribute. This ensures the browser only loads the resource if it matches the cryptographic hash you provide, preventing loading if the file on the CDN was tampered with.
-
-*Modify the commented-out Google Fonts links in the `<head>` of each HTML file like this (you'll need to get the correct hash from the CDN provider):*
-
-```html
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
