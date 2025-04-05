@@ -439,15 +439,3 @@ footer.main-footer {
 .hero-margin {
     margin-top: 3rem;
 }
-
-/* --- Particles Background --- */
-#tsparticles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensure it stays behind everything */
-    background-color: var(--bg-color);
-    pointer-events: none; /* Allow interactions through particles */
-}
