@@ -49,7 +49,7 @@ I focus on threat intelligence, secure coding practices, offensive and defensive
 Interested in collaborating, hiring, or saying hello?
 
 - 🌍 Website: [www.cybersecelite.com](https://www.cybersecelite.com)
-- 📧 Email: cybersecelite@protonmail.com
+- 📧 Email: cybersecelitellc@gmail.com
 - 🐙 GitHub: [github.com/diorjuraev](https://github.com/diorjuraev)
 
 ---
