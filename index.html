@@ -16,6 +16,8 @@
             form-action 'self';
             base-uri 'self';
             object-src 'none';
+            content="default-src 'self';
+            script-src 'self' https://counterapi.dev;
           ">
 </head>
 <body>
@@ -56,6 +58,25 @@
     <footer class="main-footer">
         <div class="container">
             <p>&copy; 2025 CyberSecElite. All rights reserved.</p> </div>
+
+            <div style="font-size: 18px;">
+                Visits: <span id="counter">loading...</span>
+              </div>
+              
+              <script>
+                // Fetch visit count securely from CounterAPI
+                fetch('https://counterapi.dev/api/v1/my-github-visit-counter-6gVn73f2XwU9/visits')
+                  .then(response => response.json())
+                  .then(data => {
+                    const count = Number(data.count);
+                    if (!isNaN(count)) {
+                      document.getElementById('counter').textContent = count.toLocaleString();
+                    }
+                  })
+                  .catch(() => {
+                    document.getElementById('counter').textContent = 'Error';
+                  });
+              </script>
     </footer>
     <script src="js/script.js"></script>
 
