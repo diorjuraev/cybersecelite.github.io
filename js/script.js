@@ -29,6 +29,34 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
+    // --- Theme Toggle ---
+    (function initTheme() {
+        const root = document.documentElement;
+        const btn = document.getElementById('theme-toggle');
+
+        const getStored = () => localStorage.getItem('theme');
+        const store = (t) => localStorage.setItem('theme', t);
+        const prefersDark = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const apply = (t) => {
+            root.setAttribute('data-theme', t);
+            if (btn) btn.textContent = t === 'light' ? '☀' : '☾';
+        };
+
+        let theme = getStored();
+        if (theme !== 'light' && theme !== 'dark') {
+            theme = prefersDark() ? 'dark' : 'light';
+        }
+        apply(theme);
+
+        if (btn) {
+            btn.addEventListener('click', () => {
+                theme = (root.getAttribute('data-theme') === 'light') ? 'dark' : 'light';
+                apply(theme);
+                store(theme);
+            });
+        }
+    })();
+
     // --- Minimal cyber effects for hero ---
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
