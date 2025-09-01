@@ -57,6 +57,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })();
 
+    // --- Button ripple on click ---
+    (function initButtonRipple() {
+        function createRipple(e, el) {
+            const rect = el.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height) * 1.2;
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            // Remove old ripple if any
+            const old = el.querySelector('.ripple');
+            if (old) old.remove();
+
+            const span = document.createElement('span');
+            span.className = 'ripple';
+            span.style.width = span.style.height = size + 'px';
+            span.style.left = x + 'px';
+            span.style.top = y + 'px';
+            el.appendChild(span);
+
+            span.addEventListener('animationend', () => span.remove());
+        }
+
+        document.addEventListener('click', (e) => {
+            const el = e.target.closest('.btn');
+            if (!el) return;
+            // Skip if user prefers reduced motion
+            if (reduceMotion) return;
+            createRipple(e, el);
+        }, { passive: true });
+    })();
+
     // --- Minimal cyber effects for hero ---
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
