@@ -145,8 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
-                console.log("Medium feed raw data:", data);
-
                 if (loadingIndicator) loadingIndicator.style.display = 'none';
 
                 if (data.status !== 'ok' || !Array.isArray(data.items) || data.items.length === 0) {
