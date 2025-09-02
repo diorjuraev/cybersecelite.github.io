@@ -56,9 +56,52 @@
                     <li>Headquarters: North Dakota, USA</li>
                 </ul>
                 <div class="panel-cta">
-                    <a class="btn btn-primary" href="mailto:diorjuraev@cybersecelite.com?subject=Inquiry%20from%20CyberSecElite%20Website">Request a consultation</a>
+                    <a id="contact-mailto" class="btn btn-primary" href="mailto:diorjuraev@cybersecelite.com?subject=Inquiry%20—%20CyberSecElite">Request a consultation</a>
                     <a class="btn btn-secondary" href="services.html">Explore services</a>
                 </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <h2>// Quick Intake</h2>
+            <div class="glass">
+                <p class="muted">Prefer email? Use this quick form to pre‑fill an email with your details.</p>
+                <form id="contact-form" class="contact-form" autocomplete="on">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                    </div>
+                    <div class="full">
+                        <label for="service">Service</label>
+                        <select id="service" name="service">
+                            <option value="AI/LLM & Agent Pentesting">AI/LLM & Agent Pentesting</option>
+                            <option value="Security Assessments & Pentesting">Security Assessments & Pentesting</option>
+                            <option value="Application Security">Application Security</option>
+                            <option value="Incident Response & Forensics">Incident Response & Forensics</option>
+                            <option value="Consulting & Advisory">Consulting & Advisory</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="timeline">Timeline</label>
+                        <input type="text" id="timeline" name="timeline" placeholder="e.g., 2–4 weeks, this quarter">
+                    </div>
+                    <div>
+                        <label for="environment">Environment</label>
+                        <input type="text" id="environment" name="environment" placeholder="e.g., cloud provider, app/AI stack">
+                    </div>
+                    <div class="full">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Goals, scope, targets, constraints…"></textarea>
+                    </div>
+                    <div class="full actions">
+                        <button type="submit" class="btn btn-primary" data-analytics="contact-form-submit">Open email draft</button>
+                        <a class="btn btn-secondary" href="mailto:diorjuraev@cybersecelite.com">Or email directly</a>
+                    </div>
+                </form>
             </div>
         </section>
     </main>

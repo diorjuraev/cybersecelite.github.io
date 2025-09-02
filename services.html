@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services — CyberSecElite, LLC</title>
+    <meta name="description" content="CyberSecElite offers penetration testing, application security, incident response, malware analysis, data/network security, training, advisory, and AI/LLM & agent pentesting aligned to OWASP, NIST, and MITRE.">
+    <meta property="og:title" content="Services — CyberSecElite, LLC">
+    <meta property="og:description" content="Holistic, research‑driven cybersecurity services: pentesting, AppSec, IR/DFIR, AI/LLM & agent security, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cybersecelite.com/services.html">
+    <meta property="og:image" content="https://www.cybersecelite.com/assets/logo.png">
     <link rel="stylesheet" href="css/style.css?v=20250901b">
 
     <meta http-equiv="Content-Security-Policy"
@@ -50,6 +56,20 @@
         <section class="page-section">
             <h1>// Services</h1>
             <p class="muted">Holistic, research‑driven cybersecurity services tailored to your business. Engage us for targeted assessments or end‑to‑end programs.</p>
+            <nav class="jump-links" aria-label="Jump to section">
+                <a href="#assessments">Pentesting</a>
+                <a href="#appsec">AppSec</a>
+                <a href="#ai-security">AI/LLM</a>
+                <a href="#ir">IR/DFIR</a>
+                <a href="#malware">Malware</a>
+                <a href="#data-network">Data/Network</a>
+                <a href="#training">Training</a>
+                <a href="#advisory">Advisory</a>
+                <a href="#methodology">Methodology</a>
+                <a href="#compliance">Compliance</a>
+                <a href="#engagements">Engagements</a>
+                <a href="#faq">FAQ</a>
+            </nav>
         </section>
 
         <section id="assessments" class="page-section">
@@ -90,6 +110,9 @@
                     <li>Guardrails & monitoring: adversarial evals, safety policy tests, detections</li>
                     <li>Mapped to OWASP Top 10 for LLMs, MITRE ATLAS, NIST AI RMF</li>
                 </ul>
+                <div class="panel-cta">
+                    <a class="btn btn-secondary" href="ai-pentesting.html">Deep dive</a>
+                </div>
             </div>
         </section>
 
@@ -200,6 +223,32 @@
             </div>
         </section>
 
+        <section id="trust" class="page-section">
+            <h2>// Trust & Ethics</h2>
+            <div class="glass">
+                <ul>
+                    <li>We only test with written authorization and defined scope.</li>
+                    <li>Safety controls: rate limits, non-destructive payloads, and backups when applicable.</li>
+                    <li>Confidentiality by default; NDA available. Evidence kept minimal and securely stored.</li>
+                    <li>Clear, reproducible findings and remediation guidance. Retesting included on request.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="faq" class="page-section">
+            <h2>// Frequently Asked Questions</h2>
+            <div class="glass">
+                <h3>Is testing safe for production?</h3>
+                <p class="muted">We prefer non‑prod when possible. If prod must be used, we coordinate low‑risk windows, throttle testing, and avoid destructive actions unless explicitly approved.</p>
+                <h3>What do you need to start?</h3>
+                <p class="muted">A signed authorization, scope/targets, key contacts, and (for AppSec/AI) access to test tenants, API keys, or demo content. We provide a short scoping checklist.</p>
+                <h3>Do you provide retesting?</h3>
+                <p class="muted">Yes. We validate fixes and update the report. Retesting windows are typically included for 30–60 days.</p>
+                <h3>How are AI/LLM assessments different?</h3>
+                <p class="muted">We include prompt/agent abuse cases, tool permission checks, data‑leak testing in RAG, and adversarial evals mapped to OWASP LLM & MITRE ATLAS.</p>
+            </div>
+        </section>
+
         <section id="compliance" class="page-section">
             <h2>// Compliance & Frameworks</h2>
             <div class="glass">
@@ -239,12 +288,18 @@
                     <h3>Ready to discuss your security goals?</h3>
                     <p class="muted">Get a tailored scope for pentesting, AppSec reviews, incident readiness, or AI/LLM security assessments.</p>
                     <div class="panel-cta">
-                        <a class="btn btn-primary" href="contact.html">Contact Us</a>
+                        <a class="btn btn-primary" href="contact.html" data-analytics="cta-services-bottom">Contact Us</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Sticky CTA (appears on scroll) -->
+    <div id="sticky-cta" class="sticky-cta" hidden>
+        <span>Have questions? Let’s talk.</span>
+        <a class="btn btn-primary" href="contact.html?source=sticky-cta" data-analytics="cta-services-sticky">Contact Us</a>
+    </div>
 
     <footer class="main-footer">
         <div class="container">
@@ -263,6 +318,47 @@
         </div>
     </footer>
     <script src="js/script.js?v=20250901a"></script>
+
+    <!-- Schema: AI Service + FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Services — CyberSecElite, LLC",
+      "url": "https://www.cybersecelite.com/services.html",
+      "mainEntity": [
+        {
+          "@type": "Service",
+          "name": "AI / LLM & Agent Pentesting",
+          "provider": {"@type": "Organization", "name": "CyberSecElite, LLC"},
+          "areaServed": "Global",
+          "serviceType": "Security Testing",
+          "description": "Red‑team LLM apps, agents, and RAG pipelines to find prompt injection, data leakage, and tool abuse.",
+          "offers": {"@type": "Offer", "availability": "https://schema.org/InStock"}
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is testing safe for production?",
+              "acceptedAnswer": {"@type": "Answer", "text": "We prefer non‑prod. In prod, we throttle and avoid destructive actions unless explicitly approved."}
+            },
+            {
+              "@type": "Question",
+              "name": "What do you need to start?",
+              "acceptedAnswer": {"@type": "Answer", "text": "Authorization, scope/targets, and access to test tenants or demo data as needed."}
+            },
+            {
+              "@type": "Question",
+              "name": "Do you provide retesting?",
+              "acceptedAnswer": {"@type": "Answer", "text": "Yes. We validate fixes and update the report within an agreed retesting window."}
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
 </body>
 </html>

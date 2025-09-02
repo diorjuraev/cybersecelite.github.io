@@ -446,6 +446,29 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
     margin-top: 1.2rem;
 }
 
+/* Jump links (TOC) */
+.jump-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+.jump-links a {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    color: #b9c7da;
+    background: rgba(20, 26, 36, 0.5);
+    transition: transform 0.15s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.jump-links a:hover {
+    color: #fff;
+    border-color: var(--neon-cyan);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
 .muted {
     color: #93a6bf;
 }
@@ -685,3 +708,48 @@ footer.main-footer {
 }
 
 /* Theme toggle removed; site uses dark theme permanently. */
+
+/* Sticky CTA */
+.sticky-cta {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(20, 26, 36, 0.75);
+    border: 1px solid rgba(42, 50, 65, 0.7);
+    border-left: 3px solid var(--neon-cyan);
+    padding: 10px 12px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    z-index: 1500;
+}
+.sticky-cta[hidden] { display: none; }
+.sticky-cta span { color: #b9c7da; font-size: 0.95rem; }
+
+/* Contact form styles */
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+}
+.contact-form .full { grid-column: 1 / -1; }
+.contact-form label { font-weight: 600; color: #c9d7eb; font-size: 0.95rem; }
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: rgba(12, 16, 22, 0.6);
+    color: var(--text-color);
+}
+.contact-form textarea { min-height: 120px; resize: vertical; }
+.contact-form .actions { display: flex; gap: 10px; margin-top: 6px; }
+
+@media (max-width: 768px) {
+  .contact-form { grid-template-columns: 1fr; }
+}
