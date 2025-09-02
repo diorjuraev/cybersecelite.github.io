@@ -659,4 +659,29 @@ footer.main-footer {
     margin-top: 3rem;
 }
 
+/* --- Footer social icons --- */
+.main-footer .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+.main-footer .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--neon-cyan);
+    transition: color 0.25s ease, transform 0.2s ease;
+}
+.main-footer .footer-social a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+.main-footer .footer-social svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+    fill: currentColor;
+}
+
 /* Theme toggle removed; site uses dark theme permanently. */
