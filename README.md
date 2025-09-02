@@ -50,7 +50,7 @@ CyberSecElite helps organizations protect their digital assets, strengthen defen
 ## 📫 Contact
 
 - 🌍 Website: [www.cybersecelite.com](https://www.cybersecelite.com)
-- 📧 Email: cybersecelitellc@gmail.com
+- 📧 Email: diorjuraev@cybersecelite.com
 - 🐙 GitHub: [github.com/diorjuraev](https://github.com/diorjuraev)
 
 ---
