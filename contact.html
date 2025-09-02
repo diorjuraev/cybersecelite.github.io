@@ -3,31 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog — CyberSecElite, LLC</title>
+    <title>Contact — CyberSecElite, LLC</title>
     <link rel="stylesheet" href="css/style.css?v=20250901b">
 
     <meta http-equiv="Content-Security-Policy"
           content="
             default-src 'self';
             script-src 'self';
-            style-src 'self' https://fonts.googleapis.com 'unsafe-inline' 'unsafe-hashes';
-            img-src 'self' data: https://cdn-images-1-medium.com https://miro.medium.com https://media.githubusercontent.com https://medium.com https://medium.com/_/stat;
+            style-src 'self' https://fonts.googleapis.com;
+            img-src 'self' data: https://cdn-images-1-medium.com;
             font-src 'self' https://fonts.gstatic.com;
             connect-src 'self' https://api.rss2json.com;
             form-action 'self';
             base-uri 'self';
             object-src 'none';
-            media-src *;
           ">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy"
           content="accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -40,29 +37,27 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
         </nav>
     </header>
 
     <main class="container">
-        <section id="blog-content" class="page-section">
-            <h1>// Insights & Updates</h1>
-            <p>Articles and research shared on Medium. Pulled from RSS.</p>
-
-            <div id="blog-loading" class="blog-loading">Loading posts…</div>
-
-            <div id="blog-posts-container" class="item-list"></div>
-
-            <div id="blog-error" class="blog-error" style="display: none;">
-                Could not load blog posts at this time. Please try again later or visit Medium directly.
+        <section class="page-section">
+            <h1>// Contact CyberSecElite</h1>
+            <div class="glass">
+                <p class="muted">We typically respond within one business day. Share your goals and timeline — we’ll recommend the right engagement model.</p>
+                <ul>
+                    <li>Email: <a href="mailto:cybersecelitellc@gmail.com">cybersecelitellc@gmail.com</a></li>
+                    <li>Headquarters: Nashville, Tennessee, USA</li>
+                </ul>
+                <div class="panel-cta">
+                    <a class="btn btn-primary" href="mailto:cybersecelitellc@gmail.com?subject=Inquiry%20from%20CyberSecElite%20Website">Request a consultation</a>
+                    <a class="btn btn-secondary" href="services.html">Explore services</a>
+                </div>
             </div>
-
-            <p class="centered-margin">
-                <a href="https://medium.com/@diorjuraev" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View All on Medium</a>
-            </p>
         </section>
     </main>
 
@@ -72,6 +67,7 @@
         </div>
     </footer>
     <script src="js/script.js?v=20250901a"></script>
+
 </body>
 </html>
 

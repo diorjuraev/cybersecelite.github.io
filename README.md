@@ -1,26 +1,29 @@
-# Cyb3rS3c3lit3 — Diyorbek Juraev
+# CyberSecElite, LLC — Company Website
 
-Welcome to **CyberSecElite**, the personal website and GitHub space of **Diyorbek Juraev**.
-
----
-
-## 👨‍💻 Who Am I?
-
-**Cyber Defense Specialist | AppSec Engineer | Red Team Operator**
-
-I focus on threat intelligence, secure coding practices, offensive and defensive security, and building tools that empower individuals and teams to secure their systems and applications. I'm passionate about cybersecurity education, automation, and building a safer digital world.
+Welcome to the source for **CyberSecElite, LLC**, a U.S.-based cybersecurity consulting firm headquartered in Nashville, Tennessee.
 
 ---
 
-## 🌐 About CyberSecElite
+## 🛡️ What We Do
 
-[**CyberSecElite**](https://www.cybersecelite.com) is my personal cybersecurity portal and knowledge base where I:
+CyberSecElite helps organizations protect their digital assets, strengthen defenses, and respond effectively to cyber threats. Services include:
 
-- Share research on ethical hacking, cyber threats, red teaming & blue teaming
-- Post labs, walkthroughs, and practical challenges
-- Organize cyber-themed bug hunts and scavenger events
-- Document my professional experience, skills, certifications, and projects
-- Help others grow in their cybersecurity careers
+- Security Assessments & Penetration Testing
+- Application Security Assessments (Web/Mobile, SDLC, code review)
+- Compromise Assessments
+- Incident Response & Digital Forensics
+- Malware Analysis
+- Data & Network Security
+- Security Training Programs
+- Consulting & Advisory
+
+---
+
+## 🌐 Company Profile
+
+- Headquarters: Nashville, Tennessee, USA
+- Founder & CEO: Mr. Diyorbek Juraev
+- Mission: Trusted, research‑driven, client‑tailored cybersecurity services
 
 ---
 
@@ -44,9 +47,7 @@ I focus on threat intelligence, secure coding practices, offensive and defensive
 
 ---
 
-## 📫 Contact Me
-
-Interested in collaborating, hiring, or saying hello?
+## 📫 Contact
 
 - 🌍 Website: [www.cybersecelite.com](https://www.cybersecelite.com)
 - 📧 Email: cybersecelitellc@gmail.com

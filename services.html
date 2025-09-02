@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services — CyberSecElite, LLC</title>
+    <link rel="stylesheet" href="css/style.css?v=20250901b">
+
+    <meta http-equiv="Content-Security-Policy"
+          content="
+            default-src 'self';
+            script-src 'self';
+            style-src 'self' https://fonts.googleapis.com;
+            img-src 'self' data: https://cdn-images-1-medium.com;
+            font-src 'self' https://fonts.gstatic.com;
+            connect-src 'self' https://api.rss2json.com;
+            form-action 'self';
+            base-uri 'self';
+            object-src 'none';
+          ">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy"
+          content="accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html"><img src="assets/logo.png" alt="CyberSecElite, LLC Logo"></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-section">
+            <h1>// Services</h1>
+            <p class="muted">Holistic, research‑driven cybersecurity services tailored to your business. Engage us for targeted assessments or end‑to‑end programs.</p>
+        </section>
+
+        <section id="assessments" class="page-section">
+            <h2>// Security Assessments & Penetration Testing</h2>
+            <div class="glass">
+                <p class="muted">Simulate real‑world adversaries to identify vulnerabilities and prioritize remediation.</p>
+                <ul>
+                    <li>External, internal, wireless, and cloud pentesting</li>
+                    <li>Network, host, and configuration reviews</li>
+                    <li>Threat‑led testing aligned to business risk</li>
+                    <li>Clear, evidence‑based reporting with fix guidance</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="appsec" class="page-section">
+            <h2>// Application Security Assessments</h2>
+            <div class="glass">
+                <p class="muted">Harden web and mobile applications across the SDLC.</p>
+                <ul>
+                    <li>Web/API/mobile assessments mapped to OWASP</li>
+                    <li>Secure code review, SAST/DAST orchestration</li>
+                    <li>Threat modeling, design reviews, and abuse cases</li>
+                    <li>SDLC enablement: standards, CI/CD gates, training</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="compromise" class="page-section">
+            <h2>// Compromise Assessments</h2>
+            <div class="glass">
+                <p class="muted">Detect hidden threats, persistence, and unauthorized access.</p>
+                <ul>
+                    <li>Endpoint and server triage; hunting for IOCs/TTPs</li>
+                    <li>Memory, log, and artifact analysis at scale</li>
+                    <li>Hardening and containment recommendations</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="ir" class="page-section">
+            <h2>// Incident Response & Digital Forensics</h2>
+            <div class="glass">
+                <p class="muted">Contain, investigate, and recover with confidence.</p>
+                <ul>
+                    <li>On‑call triage and containment playbooks</li>
+                    <li>Forensic acquisition and timeline reconstruction</li>
+                    <li>Root cause analysis and executive reporting</li>
+                    <li>Evidence preservation for legal/regulatory needs</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="malware" class="page-section">
+            <h2>// Malware Analysis</h2>
+            <div class="glass">
+                <p class="muted">Reverse engineer binaries and scripts to understand behavior and impact.</p>
+                <ul>
+                    <li>Static and dynamic analysis pipelines</li>
+                    <li>Family classification, IOCs, and detection rules</li>
+                    <li>Actionable mitigations and eradication guidance</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="data-network" class="page-section">
+            <h2>// Data & Network Security</h2>
+            <div class="glass">
+                <p class="muted">Design and enforce strong controls for data in transit and at rest.</p>
+                <ul>
+                    <li>Zero Trust baselines, identity and access controls</li>
+                    <li>Firewall, IDS/IPS, and segmentation architectures</li>
+                    <li>Encryption strategy and key management (PKI)</li>
+                    <li>Monitoring/alerting with SIEM and detection logic</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="training" class="page-section">
+            <h2>// Security Training Programs</h2>
+            <div class="glass">
+                <p class="muted">Build a security‑first culture with practical training.</p>
+                <ul>
+                    <li>Executive, engineering, and company‑wide curriculums</li>
+                    <li>Phishing simulations and social engineering workshops</li>
+                    <li>Hands‑on labs: web, cloud, and blue team exercises</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="advisory" class="page-section">
+            <h2>// Consulting & Advisory</h2>
+            <div class="glass">
+                <p class="muted">Establish or mature your in‑house cybersecurity function.</p>
+                <ul>
+                    <li>Program roadmaps aligned to frameworks (NIST)</li>
+                    <li>Policy, standards, and risk management</li>
+                    <li>Tooling selection and SOC/SIEM build‑outs</li>
+                    <li>vCISO advisory and board‑level reporting</li>
+                </ul>
+                <div class="panel-cta">
+                    <a class="btn btn-primary" href="contact.html">Request a proposal</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 CyberSecElite, LLC. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js?v=20250901a"></script>
+
+</body>
+</html>
+
