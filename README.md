@@ -1,12 +1,12 @@
 # CyberSecElite, LLC — Company Website
 
-Welcome to the source for **CyberSecElite, LLC**, a U.S.-based cybersecurity consulting firm headquartered in Nashville, Tennessee.
+This repository contains the public website for **CyberSecElite, LLC**, a U.S.-based cybersecurity consulting firm headquartered in **North Dakota, USA**.
 
 ---
 
 ## 🛡️ What We Do
 
-CyberSecElite helps organizations protect their digital assets, strengthen defenses, and respond effectively to cyber threats. Services include:
+CyberSecElite helps organizations protect their digital assets, strengthen defenses, and respond effectively to cyber threats. Core services:
 
 - Security Assessments & Penetration Testing
 - Application Security Assessments (Web/Mobile, SDLC, code review)
@@ -21,29 +21,39 @@ CyberSecElite helps organizations protect their digital assets, strengthen defen
 
 ## 🌐 Company Profile
 
-- Headquarters: Nashville, Tennessee, USA
+- Headquarters: North Dakota, USA
 - Founder & CEO: Mr. Diyorbek Juraev
 - Mission: Trusted, research‑driven, client‑tailored cybersecurity services
 
 ---
 
-## 🛠️ What You’ll Find on My GitHub
+## 🗂️ Site Structure
 
-- 🔧 Open-source tools and scripts for automation, security testing, and intelligence
-- 📚 Writeups from real-world scenarios, CTFs, and research projects
-- 🖥️ Threat Intelligence projects powered by Raspberry Pi and open data
-- 🛡️ Secure coding examples and best practices
-- 📄 Markdown notes, documentation, and learning materials
+- `index.html` — Home (hero, services overview, industries served)
+- `services.html` — Full service catalog (Assessments, AppSec, IR/Forensics, Malware, Data/Network, Training, Advisory)
+- `about.html` — Company profile, founder bio, differentiators, core services summary
+- `contact.html` — Consultation CTA and contact details
+- `blog.html` — Insights pulled from Medium via RSS (rss2json)
+- `experience.html`, `projects.html` — Background and case study placeholders
+- `css/style.css`, `js/script.js` — Styling and minimal interactivity/animations
+- `.well-known/security.txt` — Vulnerability disclosure contact and policy
+
+Hosted via GitHub Pages with custom domain `www.cybersecelite.com` (see `CNAME`).
 
 ---
 
-## 🚀 Roadmap Highlights
+## 🔒 Security Hardening
 
-- Interactive Labs and Hands-On Challenges
-- Automated CVE/Threat Feeds & Dashboard
-- Email Alerts & Telegram Integration
-- Threat Intel API with Severity/Vendor Classification
-- Web UI with Analytics and Reporting
+- Strict Content Security Policy (no inline scripts; `frame-ancestors 'none'`, `base-uri 'none'`, `object-src 'none'`, `upgrade-insecure-requests`)
+- Tight Permissions-Policy and `X-Content-Type-Options: nosniff`
+- Referrer Policy: `strict-origin-when-cross-origin`
+- External resources limited to Google Fonts and Medium image hosts; RSS via `api.rss2json.com`
+- `security.txt` published at `/.well-known/security.txt`
+- Console debug logging removed from production JS
+
+Theme is permanently dark; the theme toggle was removed to reduce surface area and simplify UX.
+
+To report a security issue, email: `diorjuraev@cybersecelite.com`.
 
 ---
 
@@ -52,6 +62,13 @@ CyberSecElite helps organizations protect their digital assets, strengthen defen
 - 🌍 Website: [www.cybersecelite.com](https://www.cybersecelite.com)
 - 📧 Email: diorjuraev@cybersecelite.com
 - 🐙 GitHub: [github.com/diorjuraev](https://github.com/diorjuraev)
+
+## 💻 Local Development
+
+- Open `index.html` directly in a browser, or serve locally:
+  - Python: `python3 -m http.server 8080`
+  - Node: `npx serve .`
+- No build step required. This is a static site using HTML/CSS/JS.
 
 ---
 
