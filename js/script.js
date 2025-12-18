@@ -256,7 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(form);
-            formData.append('access_key', accessKey);
+            formData.set('access_key', accessKey);
+            formData.set('captcha', 'false'); // disable hCaptcha requirement if enabled on key
 
             // Build subject with service if available
             const service = formData.get('service');
