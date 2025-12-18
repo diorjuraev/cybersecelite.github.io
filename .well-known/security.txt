@@ -1,6 +1,5 @@
 Contact: mailto:diorjuraev@cybersecelite.com
 Preferred-Languages: en
 Canonical: https://www.cybersecelite.com/.well-known/security.txt
-Policy: https://www.cybersecelite.com/security
+Policy: https://www.cybersecelite.com/security/
 Expires: 2026-12-31T23:59:59Z
-

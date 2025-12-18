@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Policy — CyberSecElite, LLC</title>
+    <meta name="description" content="Responsible disclosure policy for CyberSecElite, LLC. Report vulnerabilities safely with clear scope, expectations, and contact details.">
+    <link rel="stylesheet" href="../css/style.css?v=20250901b">
+
+    <meta http-equiv="Content-Security-Policy"
+          content="
+            default-src 'self';
+            script-src 'self';
+            style-src 'self' https://fonts.googleapis.com;
+            img-src 'self' data: https://cdn-images-1.medium.com;
+            font-src 'self' https://fonts.gstatic.com;
+            connect-src 'self' https://api.rss2json.com;
+            form-action 'self';
+            base-uri 'none';
+            frame-ancestors 'none';
+            object-src 'none';
+            upgrade-insecure-requests;
+          ">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy"
+          content="accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="../index.html"><img src="../assets/logo.png" alt="CyberSecElite, LLC Logo"></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-section">
+            <h1>// Vulnerability Disclosure</h1>
+            <div class="glass">
+                <p class="muted">CyberSecElite, LLC welcomes responsible reports that help keep our properties and clients secure. Please share enough detail to reproduce the issue and avoid actions that could impact availability or privacy.</p>
+                <ul>
+                    <li>Email: <a href="mailto:diorjuraev@cybersecelite.com">diorjuraev@cybersecelite.com</a></li>
+                    <li>PGP available on request for sensitive submissions.</li>
+                    <li>Include: affected asset, steps to reproduce, impact, and any logs or screenshots.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <h2>// In Scope</h2>
+            <div class="glass">
+                <ul>
+                    <li>Public assets owned by CyberSecElite, LLC (e.g., <code>*.cybersecelite.com</code>).</li>
+                    <li>Client targets only when there is explicit, written authorization from the client and CyberSecElite, LLC.</li>
+                    <li>Findings that demonstrate real security impact (auth bypass, data exposure, RCE, injection, etc.).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <h2>// Out of Scope</h2>
+            <div class="glass">
+                <ul>
+                    <li>Denial of service, spam, or automated scanning that degrades availability.</li>
+                    <li>Social engineering against CyberSecElite staff or clients.</li>
+                    <li>Physical security testing.</li>
+                    <li>Clickjacking on pages without sensitive actions, low-impact missing headers, or best-practice suggestions without a demonstrable risk.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <h2>// Testing Guidelines</h2>
+            <div class="glass">
+                <ul>
+                    <li>Use non-destructive methods; avoid exploiting the same issue repeatedly once proven.</li>
+                    <li>Do not access, modify, or exfiltrate data beyond what is necessary to demonstrate impact.</li>
+                    <li>Respect rate limits and avoid production disruption.</li>
+                    <li>Coordinate with us before testing any third-party integrations.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <h2>// Response Targets</h2>
+            <div class="glass">
+                <ul>
+                    <li>Acknowledgment: within 3 business days.</li>
+                    <li>Initial triage: within 7 business days (impact assessment and next steps).</li>
+                    <li>Remediation timelines vary by severity; we will keep you updated on progress.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <h2>// Safe Harbor</h2>
+            <div class="glass">
+                <p class="muted">If you follow this policy and act in good faith, we will not pursue legal action for your research. Please provide reasonable time for remediation before public disclosure.</p>
+                <div class="panel-cta">
+                    <a class="btn btn-primary" href="mailto:diorjuraev@cybersecelite.com?subject=Vulnerability%20Report%20—%20CyberSecElite">Report an issue</a>
+                    <a class="btn btn-secondary" href="../.well-known/security.txt">View security.txt</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-social" aria-label="Company social links">
+                <a href="https://github.com/diorjuraev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.69c-2.78.61-3.37-1.19-3.37-1.19-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1 .07 1.52 1.03 1.52 1.03.9 1.52 2.36 1.08 2.94.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.57 9.57 0 0 1 12 6.8c.85 0 1.71.11 2.51.32 1.9-1.29 2.74-1.02 2.74-1.02.56 1.37.22 2.39.11 2.64.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.69-4.57 4.94.36.31.67.92.67 1.86l-.01 2.76c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/company/cybersecelite-llc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7H9.32V9h3.4v1.56h.05c.47-.9 1.62-1.86 3.33-1.86 3.56 0 4.22 2.34 4.22 5.38v6.37ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+                </a>
+                <a href="https://x.com/Cyb3rS3c3lit3" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+                    <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h5.3l4.08 5.66L16.9 3H21l-7.35 9.06L21.5 21H16.2l-4.43-6.14L7.1 21H3l7.65-9.44L3 3Zm4.53 1.5H5.74l4.06 5.59-1.24 1.54L4.5 4.5h2.27l.76 1.03Zm10.71 14.99h1.79l-4.21-5.81-1.23 1.51 3.65 4.3Z"/></svg>
+                </a>
+            </div>
+            <p>&copy; 2025 CyberSecElite, LLC. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js?v=20250901a"></script>
+
+</body>
+</html>
