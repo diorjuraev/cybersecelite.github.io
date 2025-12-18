@@ -35,6 +35,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -796,23 +797,28 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
 .jump-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 12px;
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 .jump-links a {
     display: inline-block;
-    padding: 6px 10px;
+    padding: 8px 14px;
     border: 1px solid var(--border-color);
-    border-radius: 16px;
+    border-radius: 18px;
     color: #b9c7da;
-    background: rgba(20, 26, 36, 0.5);
-    transition: transform 0.15s ease, color 0.2s ease, border-color 0.2s ease;
+    background: rgba(20, 26, 36, 0.6);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 .jump-links a:hover {
     color: #fff;
     border-color: var(--neon-cyan);
+    background: rgba(20, 26, 36, 0.85);
     text-decoration: none;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 234, 255, 0.2);
 }
 
 .muted {
@@ -948,70 +954,141 @@ footer.main-footer {
 /* --- Responsiveness --- */
 @media (max-width: 768px) {
     :root {
-        --nav-height: 60px; /* Slightly smaller nav on mobile */
-    }
-    body {
-        padding-top: var(--nav-height);
+        --nav-height: auto;
     }
 
     header.main-header {
-        padding: 0 15px;
-        flex-direction: column; /* Stack logo and nav */
-        height: auto; /* Allow header to grow */
-        position: static; /* Change from fixed for simplicity or implement JS toggle */
-        /* If keeping fixed, need JS for hamburger menu */
-    }
-    body {
-        padding-top: 0; /* Remove padding if nav is static */
+        padding: 10px 15px;
+        flex-direction: column;
+        height: auto;
+        position: relative;
+        align-items: center;
     }
 
-     .logo-container {
+    body {
+        padding-top: 0;
+    }
+
+    .logo-container {
         padding: 10px 0;
-     }
-     .logo-container img {
-        height: 35px;
-     }
+    }
+
+    .logo-container img {
+        height: 45px;
+    }
 
     nav.main-nav {
         width: 100%;
-        padding-bottom: 10px;
+        padding: 10px 0;
     }
+
     nav.main-nav ul {
-        justify-content: center; /* Center nav items */
-        flex-wrap: wrap; /* Allow items to wrap */
-        padding-top: 5px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
     }
+
     nav.main-nav ul li {
-        margin: 5px 10px; /* Adjust spacing */
+        margin: 0;
     }
 
-    .hero-grid { grid-template-columns: 1fr; }
-    .hero-panel { order: 2; }
-    .hero-copy { text-align: center; }
-    .pill-row, .meta-row { justify-content: center; }
-    .hero-buttons { justify-content: center; }
-    .cta-card { grid-template-columns: 1fr; }
-    .trust-bar { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+    nav.main-nav ul li a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        display: block;
+    }
 
-    h1 { font-size: 2.2rem; }
-    .home-hero h1 { font-size: 2.6rem; }
-    h2 { font-size: 1.6rem; }
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hero-panel {
+        order: 2;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .pill-row, .meta-row {
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cta-card {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-bar {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+    }
+
+    h1 { font-size: 2rem; }
+    .home-hero h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.5rem; }
     h3 { font-size: 1.2rem; }
 
-    .home-hero .tagline { font-size: 1.1rem; }
+    .home-hero .tagline { font-size: 1rem; }
 
-    .social-links ul { gap: 20px; }
+    .social-links ul { gap: 15px; }
+
+    .panel-cta {
+        flex-direction: column;
+    }
+
+    .panel-cta .btn {
+        width: 100%;
+    }
+
+    .sticky-cta {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sticky-cta .btn {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
     .skills-grid {
-        grid-template-columns: 1fr; /* Single column */
+        grid-template-columns: 1fr;
     }
-     nav.main-nav ul li {
-        margin: 5px 8px; /* Smaller spacing */
+
+    nav.main-nav ul li a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
     }
-     h1 { font-size: 2rem; }
-    .home-hero h1 { font-size: 2.4rem; }
+
+    h1 { font-size: 1.75rem; }
+    .home-hero h1 { font-size: 2.2rem; }
+
+    .jump-links a {
+        font-size: 0.85rem;
+        padding: 5px 8px;
+    }
+
+    .tier-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-2, .cards-3 {
+        grid-template-columns: 1fr;
+    }
 }
 
 .blog-loading {
