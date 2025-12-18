@@ -47,62 +47,136 @@
         </nav>
     </header>
 
-    <main class="container">
-        <section class="page-section">
-            <h1>// Contact CyberSecElite</h1>
-            <div class="glass">
-                <p class="muted">We typically respond within one business day. Share your goals and timeline — we’ll recommend the right engagement model.</p>
-                <ul>
-                    <li>Email: <a href="mailto:diorjuraev@cybersecelite.com">diorjuraev@cybersecelite.com</a></li>
-                    <li>Headquarters: North Dakota, USA</li>
-                </ul>
-                <div class="panel-cta">
-                    <a id="contact-mailto" class="btn btn-primary" href="mailto:diorjuraev@cybersecelite.com?subject=Inquiry%20—%20CyberSecElite">Request a consultation</a>
-                    <a class="btn btn-secondary" href="services.html">Explore services</a>
+    <main>
+        <section class="contact-hero page-section">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-badge">Get in Touch</span>
+                    <h1 class="hero-headline">Let's Strengthen Your Security</h1>
+                    <p class="hero-subheadline">Schedule a consultation to discuss penetration testing, security assessments, managed services, or strategic advisory. We typically respond within one business day.</p>
                 </div>
             </div>
         </section>
 
-        <section class="page-section">
-            <h2>// Quick Intake</h2>
-            <div class="glass">
-                <p class="muted">Prefer email? Use this quick form to pre‑fill an email with your details.</p>
-                <form id="contact-form" class="contact-form" autocomplete="on">
-                    <div>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name">
+        <section class="contact-options-section page-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p>Direct communication for inquiries, questions, or urgent matters.</p>
+                        <a href="mailto:diorjuraev@cybersecelite.com" class="contact-link">diorjuraev@cybersecelite.com</a>
+                        <a href="mailto:diorjuraev@cybersecelite.com?subject=Inquiry%20—%20CyberSecElite" class="btn btn-primary btn-full" style="margin-top: 16px;">Send Email</a>
                     </div>
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@company.com" required>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">🏢</div>
+                        <h3>Headquarters</h3>
+                        <p>U.S.-based security consultancy serving organizations nationwide and globally.</p>
+                        <div class="contact-detail">North Dakota, USA</div>
+                        <div class="contact-meta">🕐 Response within 24 hours</div>
                     </div>
-                    <div class="full">
-                        <label for="service">Service</label>
-                        <select id="service" name="service">
-                            <option value="AI/LLM & Agent Pentesting">AI/LLM & Agent Pentesting</option>
-                            <option value="Security Assessments & Pentesting">Security Assessments & Pentesting</option>
-                            <option value="Application Security">Application Security</option>
-                            <option value="Incident Response & Forensics">Incident Response & Forensics</option>
-                            <option value="Consulting & Advisory">Consulting & Advisory</option>
-                        </select>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">🎯</div>
+                        <h3>Quick Start</h3>
+                        <p>Not sure where to begin? Explore our services or schedule a discovery call.</p>
+                        <div class="quick-links">
+                            <a href="services.html" class="btn btn-secondary btn-full">View Services</a>
+                            <a href="about.html" class="btn btn-secondary btn-full">Learn About Us</a>
+                        </div>
                     </div>
-                    <div>
-                        <label for="timeline">Timeline</label>
-                        <input type="text" id="timeline" name="timeline" placeholder="e.g., 2–4 weeks, this quarter">
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section page-section">
+            <div class="container">
+                <div class="section-intro">
+                    <h2 class="section-title">Quick Intake Form</h2>
+                    <p class="section-subtitle">Prefer email? Use this form to pre-fill a message with your details and we'll get back to you promptly.</p>
+                </div>
+
+                <div class="form-wrapper">
+                    <form id="contact-form" class="contact-form-modern" autocomplete="on">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="you@company.com" required class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="service">Service of Interest</label>
+                                <select id="service" name="service" class="form-input">
+                                    <option value="Penetration Testing">Penetration Testing</option>
+                                    <option value="Application Security">Application Security</option>
+                                    <option value="AI/LLM & Agent Pentesting">AI/LLM & Agent Pentesting</option>
+                                    <option value="Cloud Security">Cloud Security</option>
+                                    <option value="Incident Response & Forensics">Incident Response & Forensics</option>
+                                    <option value="Managed Security Services">Managed Security Services</option>
+                                    <option value="Compliance & Governance">Compliance & Governance</option>
+                                    <option value="vCISO & Advisory">vCISO & Advisory</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="timeline">Timeline</label>
+                                <input type="text" id="timeline" name="timeline" placeholder="e.g., 2–4 weeks, this quarter" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="environment">Environment / Technology Stack</label>
+                            <input type="text" id="environment" name="environment" placeholder="e.g., AWS, Azure, GCP, web applications, AI/LLM systems" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your goals, scope, specific targets, or any constraints we should know about..." rows="6" class="form-input"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large" data-analytics="contact-form-submit">Open Email Draft</button>
+                            <a class="btn btn-secondary btn-large" href="mailto:diorjuraev@cybersecelite.com">Or Email Directly</a>
+                        </div>
+                    </form>
+
+                    <div class="form-note">
+                        <p><strong>What happens next?</strong> This form creates an email draft with your details. We'll review your inquiry and respond within one business day with next steps, pricing guidance, or schedule a discovery call.</p>
                     </div>
-                    <div>
-                        <label for="environment">Environment</label>
-                        <input type="text" id="environment" name="environment" placeholder="e.g., cloud provider, app/AI stack">
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-assurance-section page-section">
+            <div class="container">
+                <div class="assurance-grid">
+                    <div class="assurance-item">
+                        <div class="assurance-icon">🔒</div>
+                        <h4>Confidential</h4>
+                        <p>NDA available upon request</p>
                     </div>
-                    <div class="full">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Goals, scope, targets, constraints…"></textarea>
+                    <div class="assurance-item">
+                        <div class="assurance-icon">⚡</div>
+                        <h4>Fast Response</h4>
+                        <p>Within 24 business hours</p>
                     </div>
-                    <div class="full actions">
-                        <button type="submit" class="btn btn-primary" data-analytics="contact-form-submit">Open email draft</button>
-                        <a class="btn btn-secondary" href="mailto:diorjuraev@cybersecelite.com">Or email directly</a>
+                    <div class="assurance-item">
+                        <div class="assurance-icon">💼</div>
+                        <h4>No Pressure</h4>
+                        <p>Consultative, not sales-driven</p>
                     </div>
-                </form>
+                    <div class="assurance-item">
+                        <div class="assurance-icon">🎯</div>
+                        <h4>Tailored Approach</h4>
+                        <p>Right-sized for your needs</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

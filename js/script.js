@@ -62,67 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     })();
 
-    // --- Minimal cyber effects for hero ---
+    // --- Minimal cyber effects for hero (simplified for Synack style) ---
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Scramble-in title effect
-    (function initScramble() {
-        const el = document.getElementById('hero-title');
-        if (!el) return;
-        const finalText = el.textContent.trim();
-        if (reduceMotion || finalText.length > 80) return; // skip on reduce motion or very long text
+    // Simple fade-in effect for hero
+    (function initHeroAnimation() {
+        const heroContent = document.querySelector('.hero-content');
+        if (!heroContent || reduceMotion) return;
 
-        const glyphs = "█▓▒░01<>[]{}#@*-/|\\_~^";
-        let frame = 0;
-        const totalFrames = Math.max(24, finalText.length * 2 + 10);
+        heroContent.style.opacity = '0';
+        heroContent.style.transform = 'translateY(20px)';
 
-        function render() {
-            const progress = frame / totalFrames;
-            const revealCount = Math.floor(progress * finalText.length);
-            let out = '';
-            for (let i = 0; i < finalText.length; i++) {
-                if (i < revealCount) {
-                    out += finalText[i];
-                } else if (finalText[i] === ' ') {
-                    out += ' ';
-                } else {
-                    out += glyphs[(Math.random() * glyphs.length) | 0];
-                }
-            }
-            el.textContent = out;
-            frame++;
-            if (frame <= totalFrames) {
-                requestAnimationFrame(render);
-            } else {
-                el.textContent = finalText; // ensure final
-            }
-        }
-        render();
-    })();
-
-    // Typewriter tagline with caret
-    (function initTypewriter() {
-        const wrap = document.getElementById('hero-tagline');
-        if (!wrap) return;
-        const caret = wrap.querySelector('.caret');
-        const full = wrap.textContent.trim();
-        if (reduceMotion || !caret) return; // respect user pref or missing caret
-
-        // Clear and set up nodes: [textNode][caret]
-        while (wrap.firstChild) wrap.removeChild(wrap.firstChild);
-        const textNode = document.createTextNode('');
-        wrap.appendChild(textNode);
-        wrap.appendChild(caret);
-
-        let i = 0;
-        const step = () => {
-            if (i <= full.length) {
-                textNode.nodeValue = full.slice(0, i);
-                i++;
-                setTimeout(step, 22); // ~45 chars/sec
-            }
-        };
-        step();
+        setTimeout(() => {
+            heroContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            heroContent.style.opacity = '1';
+            heroContent.style.transform = 'translateY(0)';
+        }, 100);
     })();
 
     // --- Function to Load Medium Blog Posts ---
