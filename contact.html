@@ -9,12 +9,13 @@
     <meta http-equiv="Content-Security-Policy"
           content="
             default-src 'self';
-            script-src 'self';
-            style-src 'self' https://fonts.googleapis.com;
+            script-src 'self' https://hcaptcha.com https://*.hcaptcha.com;
+            style-src 'self' https://fonts.googleapis.com https://hcaptcha.com https://*.hcaptcha.com;
             img-src 'self' data: https://cdn-images-1.medium.com;
             font-src 'self' https://fonts.gstatic.com;
-            connect-src 'self' https://api.rss2json.com https://api.web3forms.com;
+            connect-src 'self' https://api.rss2json.com https://api.web3forms.com https://hcaptcha.com https://*.hcaptcha.com;
             form-action 'self' https://api.web3forms.com mailto:;
+            frame-src https://hcaptcha.com https://*.hcaptcha.com;
             base-uri 'none';
             frame-ancestors 'none';
             object-src 'none';
@@ -27,6 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 
@@ -103,7 +105,7 @@
                 <div class="form-wrapper">
                     <form id="contact-form" class="contact-form-modern" autocomplete="on">
                         <input type="hidden" name="access_key" value="0c3b0244-9655-4c3b-b7d1-020dc694466d">
-                        <input type="hidden" name="captcha" value="false">
+                        <input type="hidden" name="captcha" value="true">
                         <input type="hidden" name="subject" value="CyberSecElite Inquiry">
                         <div class="form-row">
                             <div class="form-group">
@@ -144,6 +146,10 @@
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Tell us about your goals, scope, specific targets, or any constraints we should know about..." rows="6" class="form-input"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="h-captcha" data-captcha="true"></div>
                         </div>
 
                         <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
