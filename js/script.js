@@ -274,6 +274,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 : 'Request For Consultation — CyberSecElite';
             formData.set('subject', subject);
 
+            // Normalize to URL-encoded payload (Web3Forms expects plain strings)
+            const payload = new URLSearchParams();
+            formData.forEach((val, keyName) => {
+                payload.append(keyName, typeof val === 'string' ? val : `${val}`);
+            });
+
             const originalText = submitBtn ? submitBtn.textContent : '';
             if (submitBtn) {
                 submitBtn.textContent = 'Sending...';
@@ -287,8 +293,11 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    headers: { 'Accept': 'application/json' },
-                    body: formData
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: payload.toString()
                 });
                 const data = await response.json();
                 if (response.ok) {
