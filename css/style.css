@@ -2405,6 +2405,15 @@ textarea.form-input {
     border-radius: 8px;
 }
 
+.form-status {
+    margin-top: 16px;
+    font-size: 0.95rem;
+    color: #b9c7da;
+    min-height: 20px;
+}
+.form-status.success { color: #4cff9f; }
+.form-status.error { color: #ff6b6b; }
+
 .form-note p {
     color: #b9c7da;
     font-size: 0.95rem;

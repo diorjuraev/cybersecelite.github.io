@@ -251,6 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const submitBtn = form.querySelector('button[type="submit"]');
         const accessKey = '0c3b0244-9655-4c3b-b7d1-020dc694466d';
+        const statusEl = document.getElementById('form-status');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -265,6 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
             }
+            if (statusEl) {
+                statusEl.textContent = 'Sending...';
+                statusEl.className = 'form-status';
+            }
 
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
@@ -273,13 +278,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 const data = await response.json();
                 if (response.ok) {
-                    alert('Success! Your message has been sent.');
                     form.reset();
+                    if (statusEl) {
+                        statusEl.textContent = 'Success! Your message has been sent.';
+                        statusEl.className = 'form-status success';
+                    }
                 } else {
-                    alert('Error: ' + (data.message || 'Unable to submit.'));
+                    if (statusEl) {
+                        statusEl.textContent = 'Error: ' + (data.message || 'Unable to submit.');
+                        statusEl.className = 'form-status error';
+                    } else {
+                        alert('Error: ' + (data.message || 'Unable to submit.'));
+                    }
                 }
             } catch (error) {
-                alert('Something went wrong. Please try again.');
+                if (statusEl) {
+                    statusEl.textContent = 'Something went wrong. Please try again.';
+                    statusEl.className = 'form-status error';
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
             } finally {
                 if (submitBtn) {
                     submitBtn.textContent = originalText || 'Submit';
@@ -296,22 +314,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-
-        form.addEventListener('submit', (e)=>{
-            e.preventDefault();
-            const data = Object.fromEntries(new FormData(form).entries());
-            const parts = [];
-            if (data.name) parts.push(`Name: ${data.name}`);
-            if (data.email) parts.push(`Email: ${data.email}`);
-            if (data.service) parts.push(`Service: ${data.service}`);
-            if (data.timeline) parts.push(`Timeline: ${data.timeline}`);
-            if (data.environment) parts.push(`Environment: ${data.environment}`);
-            if (data.message) parts.push(`Message:\n${data.message}`);
-            const subject = `Request For Consultation — ${data.service || serviceLabel || 'General Inquiry'}`;
-            const body = parts.join('\n');
-            const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailto;
-        });
     })();
 
 }); // End of DOMContentLoaded listener
