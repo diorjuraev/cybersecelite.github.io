@@ -52,97 +52,238 @@
     </header>
 
     <main>
-        <!-- Hero -->
         <section class="home-hero page-section">
             <div class="hero-wrap grid-bg">
-                <div class="container">
-                    <div class="status-row"><span class="status-chip">CYBERSECURITY CONSULTING & MANAGED SERVICES</span></div>
-                    <h1 class="neon-text" id="hero-title">CyberSecElite, LLC</h1>
-                    <p class="tagline terminal" id="hero-tagline">Assess • Defend • Respond • Train <span class="caret" aria-hidden="true"></span></p>
-                    <div class="hero-buttons page-section hero-margin">
-                        <a href="services.html" class="btn btn-primary">Explore Services</a>
-                        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                <div class="container hero-grid">
+                    <div class="hero-copy">
+                        <div class="status-row"><span class="status-chip">Operator-led cybersecurity consulting & managed services</span></div>
+                        <h1 class="neon-text" id="hero-title">CyberSecElite, LLC</h1>
+                        <p class="tagline terminal" id="hero-tagline">Assess • Defend • Respond • Train <span class="caret" aria-hidden="true"></span></p>
+                        <ul class="pill-row">
+                            <li class="pill">Pentesting & AppSec</li>
+                            <li class="pill">AI/LLM security</li>
+                            <li class="pill">IR/Forensics</li>
+                            <li class="pill">Advisory</li>
+                        </ul>
+                        <div class="hero-buttons page-section hero-margin">
+                            <a href="contact.html" class="btn btn-primary">Book a discovery call</a>
+                            <a href="services.html" class="btn btn-secondary">See services</a>
+                        </div>
+                        <p class="microcopy">U.S.-based, NDA-friendly, responds within 1 business day.</p>
                     </div>
+                    <aside class="hero-panel glass">
+                        <div class="panel-label">Engagement snapshot</div>
+                        <div class="stat-grid">
+                            <div class="stat">
+                                <div class="stat-number">24h</div>
+                                <div class="stat-label">Kickoff SLA</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">&gt;80%</div>
+                                <div class="stat-label">Manual testing</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Retest</div>
+                                <div class="stat-label">Included</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">LLM</div>
+                                <div class="stat-label">OWASP/ATLAS mapped</div>
+                            </div>
+                        </div>
+                        <ul class="checklist">
+                            <li><span class="check-dot" aria-hidden="true"></span>Authorized testing with safety rails</li>
+                            <li><span class="check-dot" aria-hidden="true"></span>Executive-ready reporting with fix guidance</li>
+                            <li><span class="check-dot" aria-hidden="true"></span>Secure handling of client data and evidence</li>
+                        </ul>
+                        <div class="panel-cta">
+                            <a class="btn btn-primary" href="contact.html?source=hero">Start a project</a>
+                            <a class="btn btn-secondary" href="ai-pentesting.html">AI/LLM pentesting</a>
+                        </div>
+                    </aside>
                 </div>
             </div>
-            
         </section>
 
-        <!-- Services Overview -->
-        <section class="full-bleed panel page-section">
+        <section class="trust-strip" aria-label="Credentials and focus areas">
+            <div class="container trust-bar">
+                <span class="trust-badge">OSCP</span>
+                <span class="trust-badge">MITRE ATT&CK Defender</span>
+                <span class="trust-badge">Cloud & SaaS</span>
+                <span class="trust-badge">Critical Infrastructure</span>
+                <span class="trust-badge">AI/LLM Security</span>
+                <span class="trust-badge">U.S.-Based</span>
+            </div>
+        </section>
+
+        <section class="full-bleed panel page-section" id="capabilities">
             <div class="container">
-                <div class="section-heading">// What We Do</div>
-                <div class="cards-3">
-                    <div class="glass">
-                        <h3>Security Assessments & Pentesting</h3>
-                        <p class="muted">Simulate real‑world attacks to identify and prioritize vulnerabilities across infrastructure, cloud, and endpoints.</p>
-                        <div class="panel-cta"><a class="btn btn-secondary" href="services.html#assessments">Learn more</a></div>
-                    </div>
-                    <div class="glass">
+                <div class="section-heading">// Core Capabilities</div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-kicker">Offensive</div>
+                        <h3>Pentesting & Adversary Simulation</h3>
+                        <p class="muted">External, internal, wireless, and cloud testing with threat-led scenarios and evidence-based fixes.</p>
+                        <ul class="mini-list">
+                            <li>Threat-led scoping, exploit proof, retest</li>
+                            <li>Mapped to MITRE ATT&CK and CVSS</li>
+                        </ul>
+                        <a class="project-link" href="services.html#assessments">Assessments</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-kicker">AppSec</div>
                         <h3>Application Security</h3>
-                        <p class="muted">Web and mobile assessments, code review, SAST/DAST integration, and secure SDLC enablement for engineering teams.</p>
-                        <div class="panel-cta"><a class="btn btn-secondary" href="services.html#appsec">Learn more</a></div>
-                    </div>
-                    <div class="glass">
+                        <p class="muted">Web/API/mobile testing, secure code review, and CI/CD guardrails that keep releases safe.</p>
+                        <ul class="mini-list">
+                            <li>OWASP-driven testing, abuse cases</li>
+                            <li>SAST/DAST integration and SDLC playbooks</li>
+                        </ul>
+                        <a class="project-link" href="services.html#appsec">AppSec</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-kicker">AI/LLM</div>
+                        <h3>AI / LLM & Agent Security</h3>
+                        <p class="muted">Red-team prompts, agents, and RAG data flows for injection, tool abuse, and leakage.</p>
+                        <ul class="mini-list">
+                            <li>OWASP Top 10 for LLMs, MITRE ATLAS</li>
+                            <li>Guardrail patterns and detections</li>
+                        </ul>
+                        <a class="project-link" href="ai-pentesting.html">AI Pentesting</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-kicker">Response</div>
                         <h3>Incident Response & Forensics</h3>
-                        <p class="muted">Contain threats, investigate root cause, and preserve evidence with actionable remediation guidance.</p>
-                        <div class="panel-cta"><a class="btn btn-secondary" href="services.html#ir">Learn more</a></div>
-                    </div>
-                    <div class="glass">
-                        <h3>AI/LLM & Agent Pentesting</h3>
-                        <p class="muted">Red‑team LLM apps, agents, and data pipelines for prompt injection, data leaks, tool abuse, and model supply‑chain risks.</p>
-                        <div class="panel-cta"><a class="btn btn-secondary" href="ai-pentesting.html">Learn more</a></div>
-                    </div>
-                </div>
-                <div class="panel-cta" style="margin-top: 1.5rem;">
-                    <a class="btn btn-primary" href="services.html">See all services</a>
+                        <p class="muted">Rapid triage, containment, and evidence handling with executive-ready timelines.</p>
+                        <ul class="mini-list">
+                            <li>Playbooks, containment actions, artifact review</li>
+                            <li>Retainers available for 24/7 escalation</li>
+                        </ul>
+                        <a class="project-link" href="services.html#ir">IR/DFIR</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-kicker">Defense</div>
+                        <h3>Data & Network Security</h3>
+                        <p class="muted">Zero Trust baselines, identity hardening, segmentation, and detection engineering.</p>
+                        <ul class="mini-list">
+                            <li>PKI, encryption, access control</li>
+                            <li>SIEM tuning and detections</li>
+                        </ul>
+                        <a class="project-link" href="services.html#data-network">Data/Network</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-kicker">Enablement</div>
+                        <h3>Advisory & Training</h3>
+                        <p class="muted">vCISO advisory, board reporting, and hands-on labs to raise security maturity.</p>
+                        <ul class="mini-list">
+                            <li>NIST/CIS-aligned roadmaps</li>
+                            <li>Engineer, exec, and org-wide training</li>
+                        </ul>
+                        <a class="project-link" href="services.html#advisory">Advisory</a>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Industries Served -->
         <section class="full-bleed panel page-section">
             <div class="container">
-                <div class="section-heading">// Industries Served</div>
+                <div class="section-heading">// Delivery Approach</div>
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div>
+                            <h3>Discover</h3>
+                            <p class="muted">Scope, threat model, and prioritize by business impact; align safety controls before testing.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div>
+                            <h3>Assess</h3>
+                            <p class="muted">Manual-first testing with selective automation, clear evidence, and exploit narratives.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div>
+                            <h3>Remediate</h3>
+                            <p class="muted">Actionable fixes, code/architecture guidance, and paired working sessions for teams.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div>
+                            <h3>Validate & Partner</h3>
+                            <p class="muted">Retesting, regression checks, and quarterly reviews with metrics your leadership cares about.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="full-bleed panel page-section" id="industries">
+            <div class="container dual-grid">
                 <div class="glass">
+                    <div class="section-heading">// Industries & Environments</div>
                     <ul>
-                        <li>Corporate enterprises facing growing cyber threats</li>
-                        <li>Financial institutions, government agencies, and defense organizations</li>
-                        <li>Startups and technology firms requiring advanced IP protection</li>
+                        <li>Critical infrastructure and utilities</li>
+                        <li>Financial services, fintech, and insurance</li>
+                        <li>Enterprise SaaS and data platforms</li>
+                        <li>AI-native products (agents, RAG, plugins)</li>
+                        <li>Public sector and defense-aligned programs</li>
+                    </ul>
+                </div>
+                <div class="glass">
+                    <div class="section-heading">// Readiness</div>
+                    <ul>
+                        <li>Engagements only with written authorization</li>
+                        <li>Safety rails, throttling, and backup-aware testing</li>
+                        <li>Minimal evidence collection; NDA-friendly</li>
+                        <li>Executive-ready summaries plus technical detail</li>
                     </ul>
                     <div class="panel-cta">
-                        <a class="btn btn-secondary" href="about.html">About the company</a>
-                        <a class="btn btn-secondary" href="contact.html">Request a consultation</a>
+                        <a class="btn btn-secondary" href="services.html#trust">See methodology</a>
+                        <a class="btn btn-secondary" href="contact.html">Request a call</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Teaser -->
-        <section class="full-bleed panel page-section">
+        <section class="full-bleed panel page-section" id="ai-focus">
             <div class="container">
-                <div class="section-heading">// About CyberSecElite</div>
-                <div class="glass">
-                    <h3>Headquarters: North Dakota, USA</h3>
-                    <p class="muted">CyberSecElite is a U.S.‑based cybersecurity firm dedicated to helping businesses protect their digital assets, strengthen defenses, and respond effectively to cyber threats. We emphasize innovation, research, and tailored security solutions.</p>
-                    <p class="muted">Founder & CEO: <strong>Mr. Diyorbek Juraev</strong>.</p>
-                    <div class="panel-cta">
-                        <a class="btn btn-secondary" href="about.html">Learn more</a>
+                <div class="section-heading">// AI / LLM Security Spotlight</div>
+                <div class="cta-card">
+                    <div>
+                        <h3>Ship safer AI products</h3>
+                        <p class="muted">Prompt injection, agent/tool abuse, data leakage, RAG hardening, and supply chain checks with guardrail patterns you can implement fast.</p>
+                        <ul class="mini-list">
+                            <li>Adversarial evals mapped to OWASP LLM & MITRE ATLAS</li>
+                            <li>Tool permission design, audit logging, and detections</li>
+                            <li>RAG content sanitization, redaction, and approval flows</li>
+                        </ul>
+                        <div class="panel-cta">
+                            <a class="btn btn-primary" href="ai-pentesting.html">AI/LLM pentesting</a>
+                            <a class="btn btn-secondary" href="contact.html?service=ai-pentesting">Talk to an AI assessor</a>
+                        </div>
+                    </div>
+                    <div class="callout-box">
+                        <div class="feature-kicker">New</div>
+                        <p class="muted">Safety baselines with replayable traces, allow/deny lists, and break-glass controls for agents.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact CTA -->
-        <section class="full-bleed panel page-section">
+        <section class="full-bleed panel page-section" id="contact">
             <div class="container">
                 <div class="section-heading">// Contact</div>
-                <div class="glass">
+                <div class="glass contact-card">
                     <h3>Ready to strengthen your security?</h3>
-                    <p class="muted">Schedule a discovery call to discuss assessments, AppSec reviews, incident response readiness, or security training.</p>
+                    <p class="muted">Schedule a discovery call to discuss pentesting, AppSec reviews, AI/LLM safety, or incident readiness.</p>
                     <div class="panel-cta">
                         <a class="btn btn-primary" href="contact.html">Get in touch</a>
+                        <a class="btn btn-secondary" href="services.html">View all services</a>
                     </div>
+                    <p class="microcopy">Email: <a href="mailto:diorjuraev@cybersecelite.com">diorjuraev@cybersecelite.com</a> | HQ: North Dakota, USA</p>
                 </div>
             </div>
         </section>
