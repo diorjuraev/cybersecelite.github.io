@@ -339,10 +339,35 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
     font-size: 0.95rem;
 }
 
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .microcopy {
     color: #8ea6c6;
     font-size: 0.95rem;
     margin-top: 10px;
+}
+
+.meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 234, 255, 0.25);
+    background: rgba(12, 16, 22, 0.75);
+    color: #d6e6ff;
+    font-size: 0.95rem;
 }
 
 .hero-panel {
@@ -543,6 +568,18 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
     margin-top: 1.2rem;
 }
 
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.project-link:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
 .trust-strip {
     padding: 10px 0 0;
 }
@@ -563,6 +600,53 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
     color: #d9e5ff;
     font-weight: 600;
     box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.pillar-card {
+    background: linear-gradient(140deg, rgba(14, 18, 24, 0.88), rgba(18, 24, 34, 0.78));
+    border: 1px solid rgba(42, 50, 65, 0.85);
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(240px 160px at 20% 15%, rgba(0, 234, 255, 0.14), transparent 60%);
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+}
+
+.proof-card {
+    background: rgba(14, 18, 24, 0.7);
+    border: 1px solid rgba(42, 50, 65, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.32);
+}
+
+.proof-card h3 {
+    margin: 8px 0;
+}
+
+.proof-card p {
+    color: #9fbbdd;
 }
 
 .feature-grid {
@@ -876,6 +960,9 @@ footer.main-footer {
 
     .hero-grid { grid-template-columns: 1fr; }
     .hero-panel { order: 2; }
+    .hero-copy { text-align: center; }
+    .pill-row, .meta-row { justify-content: center; }
+    .hero-buttons { justify-content: center; }
     .cta-card { grid-template-columns: 1fr; }
     .trust-bar { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
 
