@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(form);
-            const key = (accessKey || '').trim();
+            const key = String(accessKey || '').trim();
             if (!key) {
                 if (statusEl) {
                     statusEl.textContent = 'Error: missing access key.';
@@ -287,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
+                    headers: { 'Accept': 'application/json' },
                     body: formData
                 });
                 const data = await response.json();
