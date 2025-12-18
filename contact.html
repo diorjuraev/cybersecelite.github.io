@@ -14,7 +14,7 @@
             img-src 'self' data: https://cdn-images-1.medium.com;
             font-src 'self' https://fonts.gstatic.com;
             connect-src 'self' https://api.rss2json.com;
-            form-action 'self';
+            form-action 'self' mailto:;
             base-uri 'none';
             frame-ancestors 'none';
             object-src 'none';
@@ -65,7 +65,7 @@
                         <div class="contact-icon">📧</div>
                         <h3>Email Us</h3>
                         <p>Direct communication for inquiries, questions, or urgent matters.</p>
-                        <a id="contact-mailto" href="mailto:diorjuraev@cybersecelite.com?subject=Request%20For%20Consultation" class="btn btn-primary btn-full">Send Email</a>
+                        <a href="mailto:diorjuraev@cybersecelite.com" class="contact-link">diorjuraev@cybersecelite.com</a>
                     </div>
 
                     <div class="contact-card">
@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="form-wrapper">
-                    <form id="contact-form" class="contact-form-modern" autocomplete="on">
+                    <form id="contact-form" class="contact-form-modern" autocomplete="on" action="mailto:diorjuraev@cybersecelite.com?subject=Inquiry%20-%20CyberSecElite" method="post" enctype="text/plain" data-mailto="native">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name</label>

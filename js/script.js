@@ -249,6 +249,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contact-form');
         if (!form) return;
 
+        // If the form is marked to use native mailto submission, skip JS handling
+        if (form.dataset.mailto === 'native') {
+            return;
+        }
+
         const serviceSelect = form.querySelector('select[name="service"]');
         if (serviceSelect && serviceLabel){
             [...serviceSelect.options].forEach(opt=>{
