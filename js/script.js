@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = 'diorjuraev@cybersecelite.com';
         const mailBtn = document.getElementById('contact-mailto');
         if (mailBtn){
-            const subj = `Inquiry${serviceLabel?': '+serviceLabel:''} — CyberSecElite`;
+            const subj = `Request For Consultation${serviceLabel?' — '+serviceLabel:''}`;
             const body = sourceParam ? `Source: ${sourceParam}%0D%0A%0D%0A` : '';
             mailBtn.href = `mailto:${email}?subject=${encodeURIComponent(subj)}&body=${body}`;
         }
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.timeline) parts.push(`Timeline: ${data.timeline}`);
             if (data.environment) parts.push(`Environment: ${data.environment}`);
             if (data.message) parts.push(`Message:\n${data.message}`);
-            const subject = `Inquiry: ${data.service || serviceLabel || 'CyberSecElite'}`;
+            const subject = `Request For Consultation — ${data.service || serviceLabel || 'General Inquiry'}`;
             const body = parts.join('\n');
             const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailto;
