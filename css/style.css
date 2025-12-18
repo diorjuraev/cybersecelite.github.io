@@ -290,11 +290,28 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
     to { transform: scale(12); opacity: 0; }
 }
 
+@keyframes gridDrift {
+    0% { background-position: 0 0, 0 0, 0 0, 50% 0%, 20% 30%; }
+    50% { background-position: 0 10px, 6px 0, 0 0, 48% -2%, 22% 32%; }
+    100% { background-position: 0 0, 0 0, 0 0, 50% 0%, 20% 30%; }
+}
+
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 10px rgba(0, 234, 255, 0.25), 0 0 18px rgba(255, 61, 244, 0.15); }
+    100% { text-shadow: 0 0 14px rgba(0, 234, 255, 0.45), 0 0 26px rgba(255, 61, 244, 0.25); }
+}
+
+@keyframes glowFloat {
+    0% { transform: translateY(0); opacity: 0.45; }
+    100% { transform: translateY(6px); opacity: 0.7; }
+}
+
 /* --- Synack-Style Homepage --- */
 .home-hero {
     padding: 120px 0 80px;
     position: relative;
     background: linear-gradient(135deg, rgba(10, 12, 16, 0.95) 0%, rgba(15, 20, 32, 0.98) 100%);
+    overflow: hidden;
 }
 
 .hero-content {
@@ -310,6 +327,7 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
     color: #fff;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
+    animation: neonPulse 6s ease-in-out infinite alternate;
 }
 
 .hero-subheadline {
@@ -418,6 +436,36 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
     position: relative;
     border-left: 4px solid var(--neon-pink);
     box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+}
+
+/* Hacker-like ambient animations */
+.home-hero::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0, 234, 255, 0.05) 0px,
+        rgba(0, 234, 255, 0.05) 2px,
+        transparent 2px,
+        transparent 6px
+      ),
+      linear-gradient(rgba(186, 206, 255, 0.05) 1px, transparent 1px) 0 0/100% 42px,
+      linear-gradient(90deg, rgba(186, 206, 255, 0.05) 1px, transparent 1px) 0 0/42px 100%;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: gridDrift 14s linear infinite;
+}
+
+.home-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1600px 400px at 50% -20%, rgba(122, 92, 255, 0.18), transparent 65%);
+    filter: blur(18px) saturate(120%);
+    pointer-events: none;
+    animation: glowFloat 8s ease-in-out infinite alternate;
 }
 
 .panel-label {
@@ -760,6 +808,10 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
     color: #93a6bf;
     line-height: 1.6;
     margin-bottom: 1.25rem;
+}
+
+.platform-card:hover {
+    box-shadow: 0 12px 32px rgba(0, 234, 255, 0.15), 0 0 22px rgba(0, 234, 255, 0.08);
 }
 
 .platform-link {
