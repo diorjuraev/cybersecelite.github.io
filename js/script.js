@@ -257,9 +257,13 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const formData = new FormData(form);
             formData.append('access_key', accessKey);
-            if (!formData.get('subject')) {
-                formData.append('subject', 'CyberSecElite Inquiry');
-            }
+
+            // Build subject with service if available
+            const service = formData.get('service');
+            const subject = service
+                ? `Request For Consultation — ${service}`
+                : 'Request For Consultation — CyberSecElite';
+            formData.set('subject', subject);
 
             const originalText = submitBtn ? submitBtn.textContent : '';
             if (submitBtn) {
