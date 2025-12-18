@@ -248,8 +248,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const form = document.getElementById('contact-form');
         if (!form) return;
-        // Form now posts directly to Web3Forms; no JS interception required.
-        return;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const accessKey = '0c3b0244-9655-4c3b-b7d1-020dc694466d';
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            formData.append('access_key', accessKey);
+            if (!formData.get('subject')) {
+                formData.append('subject', 'CyberSecElite Inquiry');
+            }
+
+            const originalText = submitBtn ? submitBtn.textContent : '';
+            if (submitBtn) {
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+            }
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    alert('Success! Your message has been sent.');
+                    form.reset();
+                } else {
+                    alert('Error: ' + (data.message || 'Unable to submit.'));
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+            } finally {
+                if (submitBtn) {
+                    submitBtn.textContent = originalText || 'Submit';
+                    submitBtn.disabled = false;
+                }
+            }
+        });
 
         const serviceSelect = form.querySelector('select[name="service"]');
         if (serviceSelect && serviceLabel){
