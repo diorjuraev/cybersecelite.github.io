@@ -134,6 +134,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return;
 
         const mediumUsername = 'diorjuraev';
+        const mediumProfile = `https://medium.com/@${mediumUsername}`;
+        const allowedHosts = new Set(['medium.com', 'link.medium.com']);
+        const safeLink = (url) => {
+            try {
+                const parsed = new URL(url);
+                if (parsed.protocol !== 'https:') return mediumProfile;
+                if (!allowedHosts.has(parsed.hostname)) return mediumProfile;
+                return parsed.href;
+            } catch (e) {
+                return mediumProfile;
+            }
+        };
         const mediumRssFeed = `https://medium.com/feed/@${mediumUsername}`;
         const rss2jsonApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(mediumRssFeed)}`;
 
@@ -160,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const titleElement = document.createElement('h3');
                     const titleLink = document.createElement('a');
-                    titleLink.href = post.link;
+                    titleLink.href = safeLink(post.link);
                     titleLink.textContent = post.title;
                     titleLink.target = '_blank';
                     titleLink.rel = 'noopener noreferrer';
@@ -183,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     descriptionElement.textContent = snippet;
 
                     const readMoreLink = document.createElement('a');
-                    readMoreLink.href = post.link;
+                    readMoreLink.href = safeLink(post.link);
                     readMoreLink.target = '_blank';
                     readMoreLink.rel = 'noopener noreferrer';
                     readMoreLink.textContent = 'Read on Medium [↗]';
