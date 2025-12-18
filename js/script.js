@@ -256,7 +256,15 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(form);
-            formData.set('access_key', accessKey);
+            const key = (accessKey || '').trim();
+            if (!key) {
+                if (statusEl) {
+                    statusEl.textContent = 'Error: missing access key.';
+                    statusEl.className = 'form-status error';
+                }
+                return;
+            }
+            formData.set('access_key', key);
             formData.set('captcha', 'false'); // disable hCaptcha requirement if enabled on key
 
             // Build subject with service if available
