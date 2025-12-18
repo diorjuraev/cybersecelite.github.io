@@ -265,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             formData.set('access_key', key);
+            formData.set('captcha', 'false');
 
             // Build subject with service if available
             const service = formData.get('service');
