@@ -1,0 +1,14 @@
+{
+  "name": "cybersecelite-website",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "CyberSecElite LLC website",
+  "scripts": {
+    "dev": "netlify dev",
+    "migrate": "node scripts/migrate.js"
+  },
+  "dependencies": {
+    "@netlify/neon": "^0.1.0"
+  }
+}

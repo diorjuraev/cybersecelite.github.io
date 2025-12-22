@@ -250,35 +250,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!form) return;
 
         const submitBtn = form.querySelector('button[type="submit"]');
-        const accessKey = '0c3b0244-9655-4c3b-b7d1-020dc694466d';
         const statusEl = document.getElementById('form-status');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(form);
-            const key = String(accessKey || '').trim();
-            if (!key) {
-                if (statusEl) {
-                    statusEl.textContent = 'Error: missing access key.';
-                    statusEl.className = 'form-status error';
-                }
-                return;
-            }
-            formData.set('access_key', key);
-            formData.set('captcha', 'false');
 
-            // Build subject with service if available
-            const service = formData.get('service');
-            const subject = service
-                ? `Request For Consultation — ${service}`
-                : 'Request For Consultation — CyberSecElite';
-            formData.set('subject', subject);
-
-            // Normalize to URL-encoded payload (Web3Forms expects plain strings)
-            const payload = new URLSearchParams();
-            formData.forEach((val, keyName) => {
-                payload.append(keyName, typeof val === 'string' ? val : `${val}`);
-            });
+            // Build payload for Netlify Function
+            const payload = {
+                name: formData.get('name') || '',
+                email: formData.get('email') || '',
+                service: formData.get('service') || '',
+                timeline: formData.get('timeline') || '',
+                environment: formData.get('environment') || '',
+                message: formData.get('message') || ''
+            };
 
             const originalText = submitBtn ? submitBtn.textContent : '';
             if (submitBtn) {
@@ -291,16 +277,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
-                const response = await fetch('https://api.web3forms.com/submit', {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
-                        'Content-Type': 'application/x-www-form-urlencoded'
+                        'Content-Type': 'application/json'
                     },
-                    body: payload.toString()
+                    body: JSON.stringify(payload)
                 });
                 const data = await response.json();
-                if (response.ok) {
+                if (data.success) {
                     form.reset();
                     if (statusEl) {
                         statusEl.textContent = 'Success! Your message has been sent.';
