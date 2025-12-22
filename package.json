@@ -1,0 +1,8 @@
+{
+  "name": "cybersecelite-website",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@netlify/functions": "^2.0.0"
+  }
+}
