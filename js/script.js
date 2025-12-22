@@ -143,9 +143,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     const descriptionElement = document.createElement('p');
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = post.description || '';
-                    let snippet = tempDiv.textContent || tempDiv.innerText || '';
+                    // Safely extract text content using DOMParser (safer than innerHTML)
+                    let snippet = '';
+                    try {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(post.description || '', 'text/html');
+                        snippet = doc.body.textContent || '';
+                    } catch (e) {
+                        // Fallback: strip HTML tags manually if DOMParser fails
+                        snippet = (post.description || '').replace(/<[^>]*>/g, '');
+                    }
+                    snippet = snippet.trim();
                     snippet = snippet.length > 250 ? snippet.substring(0, 250) + '...' : snippet;
                     descriptionElement.textContent = snippet;
 
@@ -252,6 +260,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const submitBtn = form.querySelector('button[type="submit"]');
         const statusEl = document.getElementById('form-status');
 
+        // CSRF token cache
+        let csrfToken = null;
+
+        // Fetch CSRF token before form submission
+        async function getCsrfToken() {
+            if (csrfToken) return csrfToken;
+            try {
+                const response = await fetch('/api/csrf-token', {
+                    method: 'GET',
+                    credentials: 'same-origin'
+                });
+                if (!response.ok) throw new Error('Failed to get CSRF token');
+                const data = await response.json();
+                csrfToken = data.token;
+                return csrfToken;
+            } catch (error) {
+                console.error('CSRF token fetch error:', error);
+                return null;
+            }
+        }
+
+        // Pre-fetch CSRF token when page loads
+        getCsrfToken();
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(form);
@@ -277,22 +309,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
+                // Ensure we have a CSRF token
+                const token = await getCsrfToken();
+                if (!token) {
+                    throw new Error('Security verification failed. Please refresh the page.');
+                }
+
                 const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': token
                     },
+                    credentials: 'same-origin',
                     body: JSON.stringify(payload)
                 });
                 const data = await response.json();
                 if (data.success) {
                     form.reset();
+                    // Clear CSRF token to get a fresh one for next submission
+                    csrfToken = null;
+                    getCsrfToken();
                     if (statusEl) {
                         statusEl.textContent = 'Success! Your message has been sent.';
                         statusEl.className = 'form-status success';
                     }
                 } else {
+                    // If CSRF error, try refreshing token
+                    if (response.status === 403) {
+                        csrfToken = null;
+                    }
                     if (statusEl) {
                         statusEl.textContent = 'Error: ' + (data.message || 'Unable to submit.');
                         statusEl.className = 'form-status error';
@@ -302,10 +349,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 if (statusEl) {
-                    statusEl.textContent = 'Something went wrong. Please try again.';
+                    statusEl.textContent = error.message || 'Something went wrong. Please try again.';
                     statusEl.className = 'form-status error';
                 } else {
-                    alert('Something went wrong. Please try again.');
+                    alert(error.message || 'Something went wrong. Please try again.');
                 }
             } finally {
                 if (submitBtn) {
