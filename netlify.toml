@@ -1,0 +1,9 @@
+[build]
+  # No build command needed for static HTML site
+  command = "echo 'Static site - no build needed'"
+  # Publish the root directory
+  publish = "."
+
+[build.environment]
+  # Disable Python installation - not needed for static site
+  PYTHON_VERSION = ""
