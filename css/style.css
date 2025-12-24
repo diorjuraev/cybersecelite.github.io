@@ -2352,6 +2352,17 @@ footer.main-footer {
 .contact-meta {
     color: #93a6bf;
     font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.contact-meta svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    stroke: currentColor;
 }
 
 .quick-links {
