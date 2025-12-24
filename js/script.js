@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     readMoreLink.href = safeLink(post.link);
                     readMoreLink.target = '_blank';
                     readMoreLink.rel = 'noopener noreferrer';
-                    readMoreLink.textContent = 'Read on Medium [↗]';
+                    readMoreLink.innerHTML = 'Read on Medium <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-left: 4px;"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>';
                     readMoreLink.classList.add('project-link');
 
                     postElement.appendChild(titleElement);

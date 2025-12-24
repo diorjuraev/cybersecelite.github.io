@@ -724,6 +724,14 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
     margin-bottom: 0.75rem;
 }
 
+.badge-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    stroke: var(--primary-color);
+    display: block;
+    margin: 0 auto;
+}
+
 .badge-label {
     font-size: 0.95rem;
     font-weight: 600;
@@ -795,6 +803,13 @@ nav.main-nav ul li a.active::after { /* Animate underline on hover/active */
 .platform-icon {
     font-size: 2.5rem;
     margin-bottom: 1.25rem;
+    display: block;
+}
+
+.platform-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    stroke: var(--primary-color);
     display: block;
 }
 
@@ -2073,6 +2088,14 @@ footer.main-footer {
     font-size: 1.5rem;
 }
 
+.highlight-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: var(--primary-color);
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .highlight-item span:last-child {
     color: #eaf2ff;
     font-weight: 600;
@@ -2108,6 +2131,14 @@ footer.main-footer {
 .value-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+}
+
+.value-icon svg {
+    width: 3rem;
+    height: 3rem;
+    stroke: var(--neon-cyan);
+    display: block;
+    margin: 0 auto;
 }
 
 .value-card h3 {
@@ -2275,6 +2306,14 @@ footer.main-footer {
 .contact-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+}
+
+.contact-icon svg {
+    width: 3rem;
+    height: 3rem;
+    stroke: var(--primary-color);
+    display: block;
+    margin: 0 auto;
 }
 
 .contact-card h3 {
@@ -2446,6 +2485,14 @@ textarea.form-input {
 .assurance-icon {
     font-size: 2.5rem;
     margin-bottom: 0.75rem;
+}
+
+.assurance-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    stroke: var(--neon-cyan);
+    display: block;
+    margin: 0 auto;
 }
 
 .assurance-item h4 {
