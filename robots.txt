@@ -1,0 +1,29 @@
+# Robots.txt for CyberSecElite, LLC
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.well-known/
+
+# Sitemap
+Sitemap: https://www.cybersecelite.com/sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: GPTBot
+Allow: /blog/
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Block AI training bots if desired
+User-agent: anthropic-ai
+Allow: /blog/
+Disallow: /
+
+User-agent: Claude-Web
+Allow: /blog/
+Disallow: /

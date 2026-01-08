@@ -1,0 +1,23 @@
+{
+  "name": "CyberSecElite - Cybersecurity Consulting",
+  "short_name": "CyberSecElite",
+  "description": "Professional cybersecurity consulting, penetration testing, and security services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0c10",
+  "theme_color": "#00eaff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "security"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

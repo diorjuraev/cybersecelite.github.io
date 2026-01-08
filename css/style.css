@@ -1,4 +1,30 @@
 /* --- Basic Reset & Root Variables --- */
+
+/* Improved focus indicators for accessibility */
+:focus-visible {
+    outline: 3px solid var(--neon-cyan);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--neon-cyan);
+    color: #0a0a0a;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 700;
+    z-index: 10000;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
 :root {
     /* Core palette */
     --bg-color: #0a0c10;
@@ -2287,6 +2313,59 @@ footer.main-footer {
     .experience-cta .btn {
         width: 100%;
     }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 80px 0;
+    background: rgba(15, 20, 32, 0.3);
+}
+
+.testimonial-content {
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #b9c7da;
+    font-style: italic;
+    position: relative;
+    padding-left: 20px;
+}
+
+.testimonial-content p::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -5px;
+    font-size: 2rem;
+    color: var(--neon-cyan);
+    opacity: 0.3;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(42, 50, 65, 0.5);
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 700;
+    color: #eaf2ff;
+    font-size: 1rem;
+}
+
+.author-role {
+    font-size: 0.9rem;
+    color: #8ea6c6;
 }
 
 /* === Contact Page Specific Styles === */

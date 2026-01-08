@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Register Service Worker for PWA ---
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    // Service worker registered
+                })
+                .catch(() => {
+                    // Service worker registration failed
+                });
+        });
+    }
+
     // --- Intersection Observer for fade-in animation ---
     const sections = document.querySelectorAll('.page-section');
 
@@ -248,6 +261,16 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(form);
+
+            // Honeypot check - if filled, it's likely a bot
+            if (formData.get('honeypot')) {
+                if (statusEl) {
+                    statusEl.textContent = 'Error submitting form.';
+                    statusEl.className = 'form-status error';
+                }
+                return;
+            }
+
             const key = String(accessKey || '').trim();
             if (!key) {
                 if (statusEl) {

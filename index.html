@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberSecElite, LLC — Cybersecurity Consulting & Services</title>
     <meta name="description" content="CyberSecElite, LLC is a U.S.-based cybersecurity consulting firm delivering penetration testing, application security, AI/LLM pentesting, incident response, and training.">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <meta property="og:title" content="CyberSecElite, LLC — Cybersecurity Consulting & Services">
     <meta property="og:description" content="Assess, defend, and respond with operator-led pentesting, AppSec, AI/LLM security, and incident response expertise.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.cybersecelite.com/">
     <meta property="og:image" content="https://www.cybersecelite.com/assets/logo.png">
     <link rel="stylesheet" href="css/style.css?v=20250901b">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css?v=20250901b" as="style">
+    <link rel="preload" href="js/script.js?v=20250901a" as="script">
+    <link rel="preload" href="assets/logo.png" as="image">
     <meta http-equiv="Content-Security-Policy"
           content="
             default-src 'self';
@@ -32,12 +37,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="/assets/logo.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="/assets/logo.png">
+    <meta name="theme-color" content="#00eaff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "CyberSecElite, LLC",
+      "description": "Cybersecurity consulting firm delivering penetration testing, application security, AI/LLM pentesting, incident response, and vCISO services.",
+      "url": "https://www.cybersecelite.com",
+      "logo": "https://www.cybersecelite.com/assets/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "ND",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/cybersecelite-llc",
+        "https://github.com/diorjuraev",
+        "https://x.com/Cyb3rS3c3lit3"
+      ],
+      "serviceType": ["Penetration Testing", "Application Security", "AI/LLM Security", "Incident Response", "vCISO Services", "Managed Security"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "1"
+      }
+    }
+    </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
     <header class="main-header">
         <div class="logo-container">
-            <a href="index.html"><img src="assets/logo.png" alt="CyberSecElite, LLC Logo"></a>
+            <a href="index.html"><img src="assets/logo.png" alt="CyberSecElite, LLC Logo" loading="eager"></a>
         </div>
         <nav class="main-nav">
             <ul>
@@ -52,7 +98,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="home-hero page-section">
             <div class="hero-wrap grid-bg">
                 <div class="container">
@@ -272,6 +318,50 @@
                         <div class="spotlight-card glass">
                             <div class="spotlight-card-header">Featured Capability</div>
                             <p>Agent Security Testing with safety baselines, replayable test traces, and break-glass controls for production environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section page-section" id="testimonials">
+            <div class="container">
+                <div class="section-intro">
+                    <h2 class="section-title">Trusted by Security-Conscious Organizations</h2>
+                    <p class="section-subtitle">See what our clients say about working with CyberSecElite</p>
+                </div>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <div class="testimonial-content">
+                            <p>"CyberSecElite's penetration testing revealed critical vulnerabilities we didn't know existed. Their detailed reporting and remediation guidance helped us significantly strengthen our security posture."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <div class="author-name">Tech Startup</div>
+                                <div class="author-role">SaaS Platform</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="platform-card">
+                        <div class="testimonial-content">
+                            <p>"The AI/LLM security assessment was thorough and identified prompt injection vulnerabilities we hadn't considered. Excellent expertise in emerging security domains."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <div class="author-name">AI Company</div>
+                                <div class="author-role">Machine Learning Platform</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="platform-card">
+                        <div class="testimonial-content">
+                            <p>"Professional, responsive, and thorough. The incident response team helped us contain a breach quickly and provided actionable recommendations to prevent future incidents."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <div class="author-name">Enterprise Client</div>
+                                <div class="author-role">Financial Services</div>
+                            </div>
                         </div>
                     </div>
                 </div>

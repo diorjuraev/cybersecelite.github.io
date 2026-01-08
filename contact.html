@@ -32,7 +32,7 @@
 
     <header class="main-header">
         <div class="logo-container">
-            <a href="index.html"><img src="assets/logo.png" alt="CyberSecElite, LLC Logo"></a>
+            <a href="index.html"><img src="assets/logo.png" alt="CyberSecElite, LLC Logo" loading="eager"></a>
         </div>
         <nav class="main-nav">
             <ul>
@@ -97,6 +97,8 @@
                         <input type="hidden" name="access_key" value="0c3b0244-9655-4c3b-b7d1-020dc694466d">
                         <input type="hidden" name="captcha" value="false">
                         <input type="hidden" name="subject" value="CyberSecElite Inquiry">
+                        <!-- Honeypot field for spam protection -->
+                        <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name</label>
