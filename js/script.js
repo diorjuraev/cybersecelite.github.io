@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mailBtn.href = `mailto:${email}?subject=${encodeURIComponent(subj)}&body=${body}`;
         }
 
-        const form = document.getElementById('contact-form');
+        const form = document.getElementById('contact-form-element');
         if (!form) return;
 
         const submitBtn = form.querySelector('button[type="submit"]');
@@ -290,9 +290,12 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.set('subject', subject);
 
             // Normalize to URL-encoded payload (Web3Forms expects plain strings)
+            // Exclude honeypot field from submission
             const payload = new URLSearchParams();
             formData.forEach((val, keyName) => {
-                payload.append(keyName, typeof val === 'string' ? val : `${val}`);
+                if (keyName !== 'honeypot') {
+                    payload.append(keyName, typeof val === 'string' ? val : `${val}`);
+                }
             });
 
             const originalText = submitBtn ? submitBtn.textContent : '';
