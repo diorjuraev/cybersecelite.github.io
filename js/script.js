@@ -9,17 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1 // trigger when 10% of the element is visible
     };
 
-    const observerCallback = (entries, observer) => {
+    const observerCallback = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optional: Unobserve after animation to save resources
-                // observer.unobserve(entry.target);
             }
-            // Optional: Remove class if element scrolls out of view
-            // else {
-            //     entry.target.classList.remove('visible');
-            // }
         });
     };
 
@@ -164,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     container.appendChild(postElement);
                 });
             })
-            .catch(error => {
+            .catch(() => {
                 if (loadingIndicator) loadingIndicator.style.display = 'none';
                 if (errorIndicator) errorIndicator.style.display = 'block';
             });
