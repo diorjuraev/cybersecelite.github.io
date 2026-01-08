@@ -165,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             })
             .catch(error => {
-                console.error('Error loading Medium posts:', error);
                 if (loadingIndicator) loadingIndicator.style.display = 'none';
                 if (errorIndicator) errorIndicator.style.display = 'block';
             });
@@ -188,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const key = `${event}:${label||''}`;
             store[key] = (store[key]||0) + 1;
             saveStore(store);
-            if (window && window.console) console.log('[analytics]', event, label||'', '=>', store[key]);
             if (Array.isArray(window.dataLayer)) window.dataLayer.push({event, label});
         }
 
