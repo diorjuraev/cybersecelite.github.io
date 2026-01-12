@@ -91,19 +91,53 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Minimal cyber effects for hero (simplified for Synack style) ---
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Simple fade-in effect for hero
+    // --- Terminal Typing Effect for Hero ---
     (function initHeroAnimation() {
         const heroContent = document.querySelector('.hero-content');
-        if (!heroContent || reduceMotion) return;
+        if (!heroContent) return;
 
-        heroContent.style.opacity = '0';
-        heroContent.style.transform = 'translateY(20px)';
+        // Initital state
+        heroContent.style.opacity = '1'; // Ensure visible for typing
+        const subheadline = document.querySelector('.hero-subheadline');
+
+        if (subheadline && !reduceMotion) {
+            const text = subheadline.getAttribute('data-typing-text') || subheadline.textContent;
+            subheadline.textContent = ''; // Clear text
+            subheadline.classList.add('typing-cursor');
+
+            let i = 0;
+            const typeDelay = 20; // ms per char
+
+            function typeWriter() {
+                if (i < text.length) {
+                    subheadline.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, typeDelay);
+                } else {
+                    // Remove cursor after a delay
+                    setTimeout(() => subheadline.classList.remove('typing-cursor'), 2000);
+                }
+            }
+
+            // Start typing after a brief delay
+            setTimeout(typeWriter, 500);
+        }
+
+        // Fade in other elements
+        const fadeElements = document.querySelectorAll('.hero-headline, .hero-cta-group, .hero-trust-indicators');
+        fadeElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(10px)';
+            el.style.transition = 'opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s';
+        });
 
         setTimeout(() => {
-            heroContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            heroContent.style.opacity = '1';
-            heroContent.style.transform = 'translateY(0)';
+            fadeElements.forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
         }, 100);
+
     })();
 
     // --- Function to Load Medium Blog Posts ---

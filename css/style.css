@@ -586,12 +586,10 @@ body::before {
 /* Hero Trust Indicators */
 .hero-trust-indicators {
     display: flex;
-    gap: 48px;
+    gap: 24px;
     justify-content: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(42, 50, 65, 0.5);
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 2rem auto 0;
 }
 
 .trust-metric {
