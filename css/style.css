@@ -568,6 +568,15 @@ body::before {
     margin-right: auto;
 }
 
+/* Typing cursor effect for hero subheadline */
+.hero-subheadline.typing-cursor::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 4px;
+    color: var(--neon-cyan);
+    animation: blink 1.2s steps(1) infinite;
+}
+
 /* Hero CTA Group */
 .hero-cta-group {
     display: flex;
