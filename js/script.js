@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Intersection Observer for fade-in animation ---
+    // --- Intersection Observer for fade-in animation with Stagger ---
     const sections = document.querySelectorAll('.page-section');
 
     const observerOptions = {
@@ -26,6 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+
+                // Add stagger classes to children (cards, list items)
+                const children = entry.target.querySelectorAll('.platform-card, .list-item, .credential-badge, .spotlight-feature');
+                children.forEach((child, index) => {
+                    const delayClass = `stagger-${(index % 4) + 1}`;
+                    child.classList.add(delayClass);
+                    // Ensure children also have the transition property if not inhibited by css
+                    child.style.opacity = '1';
+                    child.style.transform = 'translateY(0)';
+                });
             }
         });
     };
@@ -35,6 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    // --- Mouse Glow Tracking ---
+    document.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        document.documentElement.style.setProperty('--mouse-x', `${x}px`);
+        document.documentElement.style.setProperty('--mouse-y', `${y}px`);
+    }, { passive: true });
 
     // Theme is fixed to dark; no toggle code needed.
 
