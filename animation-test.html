@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation Test</title>
+    <style>
+        :root {
+            --bg-color: #0a0c10;
+            --text-color: #e6eef8;
+            --neon-cyan: #00eaff;
+            --neon-purple: #7a5cff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background-image:
+                radial-gradient(1200px 600px at 80% -10%, rgba(122, 92, 255, 0.18), transparent 70%),
+                radial-gradient(800px 400px at -10% 20%, rgba(0, 234, 255, 0.12), transparent 65%);
+            background-attachment: fixed;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero-headline {
+            font-family: 'Roboto Mono', monospace, sans-serif;
+            font-size: 2.5rem;
+            color: var(--neon-cyan);
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subheadline {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #b9c7da;
+            margin-bottom: 2.5rem;
+            min-height: 2.4rem; /* Prevent layout shift during typing */
+        }
+
+        /* Typing cursor effect */
+        .hero-subheadline.typing-cursor::after {
+            content: '|';
+            display: inline-block;
+            margin-left: 4px;
+            color: var(--neon-cyan);
+            animation: blink 1.2s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% {
+                opacity: 1;
+            }
+            50%, 100% {
+                opacity: 0;
+            }
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--neon-cyan);
+            color: #0a0a0a;
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 30px rgba(0, 234, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(0, 234, 255, 0.1);
+        }
+
+        .test-info {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 234, 255, 0.1);
+            border: 1px solid var(--neon-cyan);
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            max-width: 300px;
+        }
+
+        .test-info h3 {
+            color: var(--neon-cyan);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .test-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .test-info li {
+            margin: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .test-info li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--neon-cyan);
+        }
+
+        .reload-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: var(--neon-purple);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 0 20px rgba(122, 92, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .reload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(122, 92, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .hero-headline {
+                font-size: 1.8rem;
+            }
+            .hero-subheadline {
+                font-size: 1.05rem;
+            }
+            .test-info {
+                position: static;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="test-info">
+        <h3>Animation Test</h3>
+        <ul>
+            <li>Watch the text type out</li>
+            <li>See the blinking cursor</li>
+            <li>Notice the fade-in effect</li>
+            <li>Cursor disappears after 2s</li>
+        </ul>
+    </div>
+
+    <div class="hero-content">
+        <h1 class="hero-headline">Operator-Led Penetration Testing as a Service</h1>
+        <p class="hero-subheadline" data-typing-text="Discover, assess, and remediate vulnerabilities across your applications, infrastructure, and AI systems with manual-first testing backed by certifications and battle-tested methodologies.">Discover, assess, and remediate vulnerabilities across your applications, infrastructure, and AI systems with manual-first testing backed by certifications and battle-tested methodologies.</p>
+        <div class="hero-cta-group">
+            <a href="#" class="btn btn-primary">Request a Consultation</a>
+            <a href="#" class="btn btn-secondary">Explore Services</a>
+        </div>
+    </div>
+
+    <button class="reload-btn" onclick="location.reload()">↻ Replay Animation</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // --- Terminal Typing Effect for Hero ---
+            (function initHeroAnimation() {
+                const heroContent = document.querySelector('.hero-content');
+                if (!heroContent) return;
+
+                // Initial state
+                heroContent.style.opacity = '1'; // Ensure visible for typing
+                const subheadline = document.querySelector('.hero-subheadline');
+
+                if (subheadline && !reduceMotion) {
+                    const text = subheadline.getAttribute('data-typing-text') || subheadline.textContent;
+                    subheadline.textContent = ''; // Clear text
+                    subheadline.classList.add('typing-cursor');
+
+                    let i = 0;
+                    const typeDelay = 20; // ms per char
+
+                    function typeWriter() {
+                        if (i < text.length) {
+                            subheadline.textContent += text.charAt(i);
+                            i++;
+                            setTimeout(typeWriter, typeDelay);
+                        } else {
+                            // Remove cursor after a delay
+                            setTimeout(() => subheadline.classList.remove('typing-cursor'), 2000);
+                        }
+                    }
+
+                    // Start typing after a brief delay
+                    setTimeout(typeWriter, 500);
+                }
+
+                // Fade in other elements
+                const fadeElements = document.querySelectorAll('.hero-headline, .hero-cta-group');
+                fadeElements.forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(10px)';
+                    el.style.transition = 'opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s';
+                });
+
+                setTimeout(() => {
+                    fadeElements.forEach(el => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    });
+                }, 100);
+
+            })();
+        });
+    </script>
+
+</body>
+</html>
