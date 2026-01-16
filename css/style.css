@@ -973,13 +973,11 @@ body::before {
 }
 
 .badge-icon svg {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     stroke: var(--primary-color);
-    stroke-width: 1.5;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 0 8px rgba(0, 234, 255, 0.3));
 }
 
 .badge-label {
@@ -1057,18 +1055,10 @@ body::before {
 }
 
 .platform-icon svg {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     stroke: var(--primary-color);
-    stroke-width: 1.5;
     display: block;
-    transition: all 0.3s ease;
-}
-
-.platform-card:hover .platform-icon svg {
-    stroke: var(--neon-cyan);
-    filter: drop-shadow(0 0 12px rgba(0, 234, 255, 0.5));
-    transform: scale(1.1);
 }
 
 .platform-card h3 {
@@ -2439,13 +2429,11 @@ footer.main-footer {
 }
 
 .highlight-icon svg {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
     stroke: var(--primary-color);
-    stroke-width: 2;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 8px;
 }
 
 .highlight-item span:last-child {
@@ -2486,19 +2474,11 @@ footer.main-footer {
 }
 
 .value-icon svg {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     stroke: var(--neon-cyan);
-    stroke-width: 1.5;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.4));
-    transition: all 0.3s ease;
-}
-
-.value-card:hover .value-icon svg {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 16px rgba(0, 234, 255, 0.6));
 }
 
 .value-card h3 {
@@ -2722,20 +2702,11 @@ footer.main-footer {
 }
 
 .contact-icon svg {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
     stroke: var(--primary-color);
-    stroke-width: 1.5;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 0 8px rgba(0, 234, 255, 0.3));
-    transition: all 0.3s ease;
-}
-
-.contact-card:hover .contact-icon svg {
-    stroke: var(--neon-cyan);
-    transform: translateY(-4px);
-    filter: drop-shadow(0 0 14px rgba(0, 234, 255, 0.5));
 }
 
 .contact-card h3 {
@@ -2927,47 +2898,36 @@ textarea.form-input {
 }
 
 .assurance-icon svg {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     stroke: var(--neon-cyan);
-    stroke-width: 1.5;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 0 8px rgba(0, 234, 255, 0.35));
 }
 
 /* Inline Icon Styles (for small icons in text) */
 .icon-inline {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.icon-feature {
     width: 18px;
     height: 18px;
     display: inline-block;
     vertical-align: middle;
     margin-right: 6px;
-    stroke-width: 2;
-}
-
-.icon-feature {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 8px;
-    stroke-width: 2;
-    stroke: var(--neon-cyan);
 }
 
 .icon-external {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     display: inline-block;
     vertical-align: middle;
     margin-left: 4px;
-    stroke-width: 2;
-    transition: transform 0.2s ease;
-}
-
-a:hover .icon-external {
-    transform: translateX(2px) translateY(-2px);
 }
 
 .assurance-item h4 {
