@@ -988,11 +988,11 @@ body::before {
 
 /* Bento Grid Icons */
 .bento-icon svg {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
     stroke: var(--primary-color);
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 /* Platform Section */
