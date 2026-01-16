@@ -986,6 +986,15 @@ body::before {
     color: #eaf2ff;
 }
 
+/* Bento Grid Icons */
+.bento-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    stroke: var(--primary-color);
+    display: block;
+    margin-bottom: 1rem;
+}
+
 /* Platform Section */
 .platform-section {
     padding: 80px 0;
