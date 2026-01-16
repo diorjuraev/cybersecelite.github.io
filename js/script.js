@@ -226,12 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     container.appendChild(postElement);
                 });
             })
-<<<<<<< HEAD
             .catch(() => {
-=======
-            .catch(error => {
-                console.error('Error loading Medium posts:', error);
->>>>>>> parent of b411fdd (Remove console error logging and analytics console log for cleaner output)
                 if (loadingIndicator) loadingIndicator.style.display = 'none';
                 if (errorIndicator) errorIndicator.style.display = 'block';
             });
@@ -254,12 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const key = `${event}:${label || ''}`;
             store[key] = (store[key] || 0) + 1;
             saveStore(store);
-<<<<<<< HEAD
             if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event, label });
-=======
-            if (window && window.console) console.log('[analytics]', event, label||'', '=>', store[key]);
-            if (Array.isArray(window.dataLayer)) window.dataLayer.push({event, label});
->>>>>>> parent of b411fdd (Remove console error logging and analytics console log for cleaner output)
         }
 
         // Track section views once
